@@ -134,3 +134,9 @@
 \RequirePackage{caption}
 % 从jyy老师的山寨nju-thesis里抄来的
 \DeclareCaptionFormat{plain}{\heiti{\small \textbf{#1}#2#3}}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% 一些私人化的设置
+%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\code}{\texttt}
+e}{代码}
