@@ -45,14 +45,14 @@
 %%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage[paper=a4paper]{geometry}
 \geometry{
-  % 随手调的，参考了Microsoft Word的默认页边距
+  % 随手调的。
   headheight=2.6cm,
   headsep=3mm,
   footskip=3mm,
   top=3.5cm,
-  bottom=2.8cm,
-  left=3.2cm,
-  right=3.2cm
+  bottom=2.4cm,
+  left=2.8cm,
+  right=2.8cm
 }
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -60,6 +60,7 @@
 %%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{fontspec}
 % 不记得哪里抄来的了
+% TODO：把数学公式的字体换成偏向无衬线的
 \let\hbar\relax
 \RequirePackage{fourier}
 \RequirePackage[T1]{fontenc}
@@ -112,7 +113,7 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%
-% 数学环境
+% 定理
 %%%%%%%%%%%%%%%%%%%%%%
 % 不清楚要不要加，CTeX似乎已经做了这些工作
 % \RequirePackage{float}
@@ -125,17 +126,43 @@
 \providecommand{\lemmaname}{引理}
 \providecommand{\theoremname}{定理}
 \newtheorem{problem}{问题}
-\newtheorem{exercise}{练习}
+\newtheorem*{problem*}{问题}
+\newtheorem{exercise}{习题}
+\newtheorem*{exercise*}{习题}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % caption
 %%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\lstlistingname}{代码}
 \RequirePackage{caption}
+\renewcommand{\lstlistingname}{代码}
 % 从jyy老师的山寨nju-thesis里抄来的
 \DeclareCaptionFormat{plain}{\heiti{\small \textbf{#1}#2#3}}
 
 %%%%%%%%%%%%%%%%%%%%%%
-% 一些私人化的设置
+% 枚举环境间距
+%%%%%%%%%%%%%%%%%%%%%%
+% 还是从jyy老师的山寨nju-thesis里抄来的
+\RequirePackage{enumitem}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=3pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=3pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsepi=3pt}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% 地址
+%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{authblk}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% 环绕式插图
+%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{graphicx}
+\RequirePackage{wrapfig}
+\graphicspath{
+  {resources/}
+  {pic/}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% 私人化
 %%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\code}{\texttt}
