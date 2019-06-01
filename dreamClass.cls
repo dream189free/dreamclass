@@ -60,9 +60,9 @@
 %%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{fontspec}
 % 不记得哪里抄来的了
-% TODO：把数学公式的字体换成偏向无衬线的
 \let\hbar\relax
-\RequirePackage{fourier}
+% 随手换了一个字体
+\RequirePackage{lmodern}
 \RequirePackage[T1]{fontenc}
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -129,6 +129,26 @@
 \newtheorem*{problem*}{问题}
 \newtheorem{exercise}{习题}
 \newtheorem*{exercise*}{习题}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% 算法, algorithmicx
+%%%%%%%%%%%%%%%%%%%%%%
+%\RequirePackage{algorithm}
+%\RequirePackage[noend]{algpseudocode}
+%\floatname{algorithm}{算法}
+%\algrenewcommand\algorithmicrequire{\textbf{输入：}}
+%\algrenewcommand\algorithmicensure{\textbf{输出：}}
+%\algnewcommand\algorithmicto{\textbf{to}}
+%\algrenewtext{For}[3]{\algorithmicfor\ #1 = #2 \algorithmicto\ #3 \algorithmicdo}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% 算法，algorithm2e
+%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[ruled, linesnumbered, noend, vlined]{algorithm2e}
+\SetAlgorithmName{算法}{algorithmautoref}{算法列表}
+\SetKwInput{KwData}{输入}
+\SetKwInput{KwResult}{输出}
+\SetAlFnt{\ttfamily}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % caption
