@@ -59,7 +59,6 @@
 % 英文字体
 %%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{fontspec}
-% 不记得哪里抄来的了
 \let\hbar\relax
 % 随手换了一个字体
 \RequirePackage{lmodern}
@@ -144,7 +143,7 @@
 %%%%%%%%%%%%%%%%%%%%%%
 % 算法，algorithm2e
 %%%%%%%%%%%%%%%%%%%%%%
-\usepackage[ruled, linesnumbered, noend, vlined]{algorithm2e}
+\RequirePackage[ruled, linesnumbered, noend, vlined]{algorithm2e}
 \SetAlgorithmName{算法}{algorithmautoref}{算法列表}
 \SetKwInput{KwData}{输入}
 \SetKwInput{KwResult}{输出}
