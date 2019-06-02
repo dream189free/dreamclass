@@ -61,7 +61,7 @@
 \RequirePackage{fontspec}
 \let\hbar\relax
 % 随手换了一个字体
-\RequirePackage{lmodern}
+\RequirePackage{concmath}
 \RequirePackage[T1]{fontenc}
 
 %%%%%%%%%%%%%%%%%%%%%%
