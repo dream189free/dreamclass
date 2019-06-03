@@ -148,6 +148,8 @@
 \SetKwInput{KwData}{输入}
 \SetKwInput{KwResult}{输出}
 \SetAlFnt{\ttfamily}
+\SetKw{Continue}{\textbf continue}
+\SetKw{Break}{\textbf break}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % caption
