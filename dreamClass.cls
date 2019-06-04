@@ -150,6 +150,7 @@
 \SetAlFnt{\ttfamily}
 \SetKw{Continue}{\textbf continue}
 \SetKw{Break}{\textbf break}
+\SetKwRepeat{Do}{do}{while}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % caption
