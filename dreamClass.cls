@@ -130,17 +130,6 @@
 \newtheorem*{exercise*}{习题}
 
 %%%%%%%%%%%%%%%%%%%%%%
-% 算法, algorithmicx
-%%%%%%%%%%%%%%%%%%%%%%
-%\RequirePackage{algorithm}
-%\RequirePackage[noend]{algpseudocode}
-%\floatname{algorithm}{算法}
-%\algrenewcommand\algorithmicrequire{\textbf{输入：}}
-%\algrenewcommand\algorithmicensure{\textbf{输出：}}
-%\algnewcommand\algorithmicto{\textbf{to}}
-%\algrenewtext{For}[3]{\algorithmicfor\ #1 = #2 \algorithmicto\ #3 \algorithmicdo}
-
-%%%%%%%%%%%%%%%%%%%%%%
 % 算法，algorithm2e
 %%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage[ruled, linesnumbered, noend, vlined]{algorithm2e}
@@ -150,6 +139,8 @@
 \SetAlFnt{\ttfamily}
 \SetKw{Continue}{\textbf continue}
 \SetKw{Break}{\textbf break}
+\SetKwRepeat{Do}{do}{while}
+\SetKwProg{Def}{函数}{:}{}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % caption
