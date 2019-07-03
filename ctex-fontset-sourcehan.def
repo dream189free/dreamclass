@@ -59,7 +59,7 @@
             \setCJKfamilyfont { zhkai }
               [
                 cmap     = UniGB-UTF16-H ,
-                BoldFont = FZBWKSK.ttf
+                BoldFont = FZShengSKSJW_Cu.ttf
               ] { FZXKTK.ttf }
             \setCJKfamilyfont { zhfs }
               [ cmap = UniGB-UTF16-H ] { FZFSK.ttf }
@@ -87,7 +87,7 @@
       {
         \ctex_set_upfonts:nnnnnnn
           {SourceHanSerifCN-Light.ttf} {SourceHanSansCN-Regular.ttf}
-          {FZXKTK.ttf} {FZBWKSK.ttf}
+          {FZXKTK.ttf} {FZShengSKSJW_Cu.ttf}
           {SourceHanSansCN-Light.ttf} {SourceHanSansCN-Regular.ttf}
           {FZFSK.ttf}
         \ctex_set_upfamily:nnn { zhsong } { upzhserif } { upzhserifb }
@@ -107,7 +107,7 @@
         \setCJKfamilyfont { zhfs }   { 方正仿宋_GBK }
         \setCJKfamilyfont { zhkai }
         [
-          BoldFont = 方正北魏楷书_GBK ,
+          BoldFont = 方正盛世楷书简体_粗 ,
         ] { 方正新楷体_GBK }
       }
   }
