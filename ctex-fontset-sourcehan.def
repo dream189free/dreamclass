@@ -1,5 +1,5 @@
 %%
-%% This is file `ctex-fontset-sourcesans.def',
+%% This is file `ctex-fontset-sourcehan.def',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
@@ -22,83 +22,93 @@
 %%
 %%     This work has the LPPL maintenance status `maintained'.
 %%
-%%     The Current Maintainers of this work are sd44 <sd44sd44@yeah.net>.
-%%     And dream189free <dream189free@outlok.com>.
-\GetIdInfo$Id: ctex.dtx 6471e87 2018-05-21 18:15:18 +0800 sd44 <sd44sd44@yeah.net> $
-  {Sourcesans fonts definition (CTEX)}
-\ProvidesExplFile{ctex-fontset-sourcesans.def}
-  {\ExplFileDate}{2.4.7}{\ExplFileDescription}
+%%     The Current Maintainers of this work are Leo Liu, Qing Lee, Liam Huang and dream189free.
+%%
+%% ------------------------------------------------------------------------------
+%%
+\GetIdInfo$Id: ctex.dtx 735dfe2 2019-05-29 21:42:29 +0800 Qing Lee <sobenlee@gmail.com> $
+  {Source Han fonts definition (CTEX)}
+\ProvidesExplFile{ctex-fontset-sourcehan.def}
+  {\ExplFileDate}{2.4.16}{\ExplFileDescription}
 \sys_if_engine_pdftex:TF
   {
     \sys_if_output_pdf:TF
-      { \ctex_fontset_error:n { sourcesans } }
+      { \ctex_fontset_error:n { sourcehan } }
       {
         \ctex_zhmap_case:nnn
           {
             \setCJKmainfont
               [
-                  BoldFont = NotoSerifSC-Bold.otf ,
+                      cmap = UniGB-UTF16-H ,
+                  BoldFont = SourceHanSerifCN-Regular.ttf ,
                 ItalicFont = FZXKTK.ttf
-              ] { NotoSerifSC-Regular.otf }
+              ] { SourceHanSerifCN-Light.ttf }
             \setCJKsansfont
-              [
-                BoldFont = NotoSansSC-Bold.otf
-              ] { NotoSansSC-Regular.otf }
-            \setCJKmonofont [ cmap = UniGB-UTF16-H ] { FandolFang-Regular.otf }
+              [       cmap = UniGB-UTF16-H ，
+                  BoldFont = SourceHanSansCN-Regular.ttf
+              ] { SourceHanSansCN-Light.ttf }
+            \setCJKmonofont [ cmap = UniGB-UTF16-H ] { FZFSK.ttf }
             \setCJKfamilyfont { zhsong }
-              [
-                BoldFont = NotoSerifSC-Bold.otf
-              ] { NotoSerifSC-Regular.otf }
+              [       cmap = UniGB-UTF16-H ，
+                  BoldFont = SourceHanSerifCN-Regular.ttf
+              ] { SourceHanSerifCN-Light.ttf }
             \setCJKfamilyfont { zhhei }
-              [
-                BoldFont = NotoSansSC-Bold.otf
-              ] { NotoSansSC-Regular.otf }
-            \setCJKfamilyfont { zhfs }
-              [ cmap = UniGB-UTF16-H ] { FandolFang-Regular.otf }
+              [       cmap = UniGB-UTF16-H ，
+                  BoldFont = SourceHanSansCN-Regular.ttf
+              ] { SourceHanSansCN-Light.ttf }
             \setCJKfamilyfont { zhkai }
               [
-              cmap = UniGB-UTF16-H,
-              BoldFont = FZCKJW.ttf
+                cmap     = UniGB-UTF16-H ,
+                BoldFont = FZBWKSK.ttf
               ] { FZXKTK.ttf }
-            \ctex_punct_set:n { sourcesans }
+            \setCJKfamilyfont { zhfs }
+              [ cmap = UniGB-UTF16-H ] { FZFSK.ttf }
+            \ctex_punct_set:n { sourcehan }
             \ctex_punct_map_family:nn { \CJKrmdefault } { zhsong }
             \ctex_punct_map_family:nn { \CJKsfdefault } { zhhei }
             \ctex_punct_map_family:nn { \CJKttdefault } { zhfs }
             \ctex_punct_map_itshape:nn { \CJKrmdefault } { zhkai }
+            \ctex_punct_map_bfseries:nn { \CJKrmdefault } { zhhei }
             \ctex_punct_map_bfseries:nn { \CJKrmdefault , zhsong } { zhsongb }
             \ctex_punct_map_bfseries:nn { \CJKsfdefault , zhhei } { zhheib }
           }
           {
-            \ctex_load_zhmap:nnnn { rm } { zhhei } { zhfs } { zhfandolfonts }
-            \ctex_punct_set:n { sourcesans }
+            \ctex_load_zhmap:nnnn { rm } { zhhei } { zhfs } { zhadobefonts }
+            \ctex_punct_set:n { sourcehan }
             \ctex_punct_map_family:nn { \CJKrmdefault } { zhsong }
             \ctex_punct_map_bfseries:nn { \CJKrmdefault } { zhhei }
             \ctex_punct_map_itshape:nn { \CJKrmdefault } { zhkai }
           }
-          { \ctex_fontset_error:n { sourcesans } }
+          { \ctex_fontset_error:n { sourcehan } }
       }
   }
   {
     \sys_if_engine_uptex:TF
       {
         \ctex_set_upfonts:nnnnnnn
-          {NotoSerifSC-Regular.otf} {NotoSerifSC-Bold.otf}
-          {FZXKTK.ttf} {FZCJKW.ttf}
-          {NotoSansSC-Regular.otf} {NotoSansSC-Bold.otf}
-          {FandolFang-Regular.otf}
+          {SourceHanSerifCN-Light.ttf} {SourceHanSansCN-Regular.ttf}
+          {FZXKTK.ttf} {FZBWKSK.ttf}
+          {SourceHanSansCN-Light.ttf} {SourceHanSansCN-Regular.ttf}
+          {FZFSK.ttf}
         \ctex_set_upfamily:nnn { zhsong } { upzhserif } { upzhserifb }
         \ctex_set_upfamily:nnn { zhhei } { upzhsans } { upzhsansb }
-        \ctex_set_upfamily:nnn { zhfs } { upzhmono} {}
+        \ctex_set_upfamily:nnn { zhfs } { upzhmono } {}
         \ctex_set_upfamily:nnn { zhkai } { upzhserifit } {}
       }
       {
-        \setCJKmainfont[ItalicFont = 方正新楷体_GBK ] { Noto~Serif~SC }
-        \setCJKsansfont { Noto~Sans~SC }
-        \setCJKmonofont [ Extension = .otf ] { FandolFang-Regular }
-        \setCJKfamilyfont { zhsong }{ Noto~Serif~SC }
-        \setCJKfamilyfont { zhhei } { Noto~Sans~SC }
-        \setCJKfamilyfont { zhfs }  [ Extension = .otf ] { FandolFang-Regular }
-        \setCJKfamilyfont { zhkai } [BoldFont=方正粗楷简体]{ 方正新楷体_GBK }
+        \setCJKmainfont
+          [
+            ItalicFont = 方正新楷体_GBK
+          ] { Source~Han~Serif~CN }
+        \setCJKsansfont { Source~Han~Sans~CN }
+        \setCJKmonofont { 方正仿宋_GBK }
+        \setCJKfamilyfont { zhsong } { Source~Han~Serif~CN }
+        \setCJKfamilyfont { zhhei }  { Source~Han~Sans~CN }
+        \setCJKfamilyfont { zhfs }   { 方正仿宋_GBK }
+        \setCJKfamilyfont { zhkai }
+        [
+          BoldFont = 方正北魏楷书_GBK ,
+        ] { 方正新楷体_GBK }
       }
   }
 \NewDocumentCommand \songti   { } { \CJKfamily { zhsong } }
@@ -107,4 +117,4 @@
 \NewDocumentCommand \kaishu   { } { \CJKfamily { zhkai } }
 %%
 %%
-%% End of file `ctex-fontset-sourcesans.def'.
+%% End of file `ctex-fontset-sourcehan.def'.
