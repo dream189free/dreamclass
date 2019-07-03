@@ -22,7 +22,7 @@
 % linespread = <float>(行距，默认1.3倍)
 % zihao =-4(小四号), 5(五号), false(使用文档类原有设置)
 % fontset = sourcehan(思源), founder(方正)，adobe(奥多比)，windowsnew(中易字体和微软雅黑)等
-\LoadClass[UTF8, fontset = sourcehan, zihao = -4, sub3section]{ctexart}
+\LoadClass[UTF8, fontset = sourcehan, zihao = false, 12pt, sub3section]{ctexart}
 % 计数一直到paragraph
 \setcounter{secnumdepth}{4}
 \ctexset{
@@ -37,22 +37,21 @@
   paragraph/format = \normalsize\bfseries\sffamily\raggedright,
   subparagraph/format = \normalsize\bfseries\sffamily\raggedright
 }
-% TODO: 对hyperref做设置
-\RequirePackage{hyperref}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% 超链接
+%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage[colorlinks, linkcolor=red, anchorcolor=blue, citecolor=green]{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 页面大小
 %%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage[paper=a4paper]{geometry}
 \geometry{
-  % 随手调的。
-  headheight=2.6cm,
-  headsep=3mm,
-  footskip=3mm,
-  top=3.5cm,
-  bottom=2.4cm,
-  left=2.8cm,
-  right=2.8cm
+  top = 2.54cm,
+  bottom = 2.54cm,
+  left = 3cm,
+  right = 3cm
 }
 
 %%%%%%%%%%%%%%%%%%%%%%
