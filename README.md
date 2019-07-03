@@ -1,23 +1,20 @@
 # latex-template-dreamClass
 
 ## 简介
-照着几个开源项目和几个宏包的文档写出来的，自用的课程实验报告模板。
+
+自用的课程实验报告模板。
 
 ## 用法
 
-1. 根据*CTeX宏集手册*的说明，把`*.cls`和`*.def`丢到当前工作目录或者本地TDS目录树下。
+1. 安装下面的字体。比如说，把他们拷贝到`~/.fonts`或者`/usr/share/fonts/WHATEVER_YOU_WANT`中。
+    - 思源黑体和思源宋体（我们使用[这个项目](https://github.com/Pal3love/Source-Han-TrueType)中提供的文件。）
+    - 方正新楷体和方正盛世楷体_粗。（可以在[方正字库的网站](https://www.foundertype.com/)上下载。）
+    - 方正仿宋（同上。）
+2. 把`*.cls`和`*.def`丢到当前工作目录或者本地TDS目录树下。
 一个供参考的路径是`~/texmf/tex/latex/`。
-2. 在`*.tex`的导言区加上`\documentclass{dreamClass}`。
-3. 期待能够编译成功。
-
-## 注意事项
-字体相关问题使人头痛，尤以在Windows下为甚。
-不过可以肯定的是：如果您的电脑上并没有思源黑体、思源宋体、方正粗楷、方正新楷体以及Fandol仿宋体，
-就请不要使用`ctex-fontset-sourcesans.def`，这可以通过更改`dreamClass.cls`的相关选项来实现。
+3. 在`*.tex`的导言区加上`\documentclass{dreamClass}`。
 
 ## TODO
 
-- 加一个示例文档（等我考完了期末考试就把这个学期的算法作业放上来好了，希望助教不要找我喝茶，咕咕咕）
-- 让超链接的外形更好看
+- 加一个示例文档（咕咕咕）
 - 让代码块更好看
-- 增加选项以控制默认的正文字号——小四号或者五号字
