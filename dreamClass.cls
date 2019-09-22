@@ -30,8 +30,8 @@
   % kaiming(开明式)，别的...算了吧
   punct = kaiming,
   % 章节标题格式
-  % 让section居中，其他的左对齐
-  section/format = \Large\bfseries\sffamily\centering,
+  % 统统左对齐
+  section/format = \Large\bfseries\sffamily\raggedright,
   subsection/format = \large\bfseries\sffamily\raggedright,
   subsubsection/format = \normalsize\bfseries\sffamily\raggedright,
   paragraph/format = \normalsize\bfseries\sffamily\raggedright,
