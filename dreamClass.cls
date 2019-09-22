@@ -113,8 +113,6 @@
 %%%%%%%%%%%%%%%%%%%%%%
 % 定理
 %%%%%%%%%%%%%%%%%%%%%%
-% 不清楚要不要加，CTeX似乎已经做了这些工作
-% \RequirePackage{float}
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
 \theoremstyle{plain}
@@ -142,10 +140,48 @@
 \SetKwProg{Def}{函数}{:}{}
 
 %%%%%%%%%%%%%%%%%%%%%%
-% caption
+% caption和浮动体
 %%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage[section]{placeins}
+\RequirePackage{float}
 \RequirePackage{caption}
 \renewcommand{\lstlistingname}{代码}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+
+\RequirePackage{chngcntr}
+\AtBeginDocument{\counterwithin{lstlisting}{section}}
+\counterwithin{equation}{section}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+% \makeatletter
+% \@addtoreset{equation}{section}
+% \@addtoreset{figure}{section}
+% \@addtoreset{table}{section}
+% % \@addtoreset{lstlisting}{section}
+% \makeatother
+
+% \renewcommand{\thetable}{\thesection{}-\arabic{table}}
+% \renewcommand{\thefigure}{\thesection{}-\arabic{figure}}
+% \renewcommand{\theequation}{\thesection{}-\arabic{equation}}
+
+\renewcommand{\equationautorefname}{式}
+\renewcommand{\footnoteautorefname}{脚注}
+\renewcommand{\itemautorefname}{项}
+\renewcommand{\figureautorefname}{图}
+\renewcommand{\tableautorefname}{表}
+\renewcommand{\partautorefname}{篇}
+\renewcommand{\appendixautorefname}{附录}
+\renewcommand{\chapterautorefname}{章}
+\renewcommand{\sectionautorefname}{节}
+\renewcommand{\subsectionautorefname}{小节}
+\renewcommand{\subsubsectionautorefname}{小小节}
+\renewcommand{\paragraphautorefname}{段落}
+\renewcommand{\subparagraphautorefname}{子段落}
+\renewcommand{\FancyVerbLineautorefname}{行}
+\renewcommand{\theoremautorefname}{定理}
+
 % 从jyy老师的山寨nju-thesis里抄来的
 \DeclareCaptionFormat{plain}{\heiti{\small \textbf{#1}#2#3}}
 
