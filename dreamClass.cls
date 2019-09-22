@@ -156,7 +156,7 @@
 \RequirePackage{enumitem}
 \setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=3pt}
 \setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=3pt}
-\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsepi=3pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=3pt}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 地址
