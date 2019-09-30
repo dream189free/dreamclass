@@ -9,7 +9,7 @@
 %% # Author: Yanyan Jiang <jiangyy@outlook.com>
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% # Dream Class
-%% # Author: dream189free <dream189free@outlook.com>
+%% # Author: Tianyi Liu <tyi.liu@outlook.com>
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
@@ -22,7 +22,7 @@
 % linespread = <float>(行距，默认1.3倍)
 % zihao =-4(小四号), 5(五号), false(使用文档类原有设置)
 % fontset = sourcehan(思源), founder(方正)，adobe(奥多比)，windowsnew(中易字体和微软雅黑)等
-\LoadClass[UTF8, fontset = sourcehan, zihao = false, 12pt, sub3section]{ctexart}
+\LoadClass[UTF8, fontset = sourcehan, zihao = 5, 12pt, sub3section]{ctexart}
 % 计数一直到paragraph
 \setcounter{secnumdepth}{4}
 \ctexset{
@@ -41,7 +41,7 @@
 %%%%%%%%%%%%%%%%%%%%%%
 % 超链接
 %%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage[colorlinks, linkcolor=red, anchorcolor=blue, citecolor=green]{hyperref}
+\RequirePackage[colorlinks, linkcolor=red!80!black, anchorcolor=blue!80!black, citecolor=green!80!black]{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 页面大小
@@ -57,57 +57,70 @@
 %%%%%%%%%%%%%%%%%%%%%%
 % 英文字体
 %%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage{fontspec}
-\let\hbar\relax
-% 随手换了一个字体
 \RequirePackage{concmath}
 \RequirePackage[T1]{fontenc}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 代码
 %%%%%%%%%%%%%%%%%%%%%%
-% 从progartcn抄来的
+% copy from https://github.com/Liam0205/easy_slides/blob/master/global_setup/settings.tex#L8-L65
 \RequirePackage{listings, verbatim}
 \RequirePackage{xcolor}
-\definecolor{codecolorkeywords}{rgb}{0,0,1}
-\definecolor{codecolorcomments}{rgb}{0,0.5,0}
-\definecolor{codecolorxmlcomments}{rgb}{0.5,0.5,0.5}
-\definecolor{codecolorstrings}{rgb}{0.64,0.08,0.08}
-\definecolor{codecolortypes}{rgb}{0.17,0.57,0.68}
-\lstset{
-  % Basic design
-  basicstyle=\linespread{1.2}\ttfamily,
-  frame=tb,
-  framesep=5pt,
-  framerule=.5pt,
-  framexleftmargin=10pt,
-  rulecolor=\color{black},
-  abovecaptionskip=0pt,
-  belowcaptionskip=5pt,
-  aboveskip=5pt,
-  backgroundcolor=\color{black!5!white},
-  % Code design
-  keywordstyle=\color{codecolorkeywords},
-  commentstyle=\color{codecolorcomments},
-  stringstyle=\color{codecolorstrings},
-  numberstyle=\small\color{gray},
-  breakatwhitespace=false,
-  breaklines=true,
-  captionpos=t,
-  keepspaces=true,
-  % Line numbers
-  numbers=none,
-  numbersep=15pt,
-  xleftmargin=10pt,
-  stepnumber=1,
-  firstnumber=1,
-  numberfirstline=true,
-  % Code
-  tabsize=4,
-  showspaces=false,
-  showstringspaces=false,
-  showtabs=false,
-  breaklines=true
+\lstdefinestyle{lfonts}{
+  basicstyle   = \linespread{0.97}\small\ttfamily,
+  stringstyle  = \color{purple},
+  keywordstyle = \color{blue!60!black}\bfseries,
+  commentstyle = \color{green!60!black}\scshape,
+}
+\lstdefinestyle{lnumbers}{
+  numbers     = left,
+  numberstyle = \tiny,
+  numbersep   = 1em,
+  firstnumber = 1,
+  stepnumber  = 1,
+}
+\lstdefinestyle{llayout}{
+  breaklines       = true,
+  tabsize          = 2,
+  columns          = flexible,
+}
+\lstdefinestyle{lgeometry}{
+  xleftmargin      = 20pt,
+  xrightmargin     = 0pt,
+  frame            = tb,
+  framesep         = \fboxsep,
+  framexleftmargin = 20pt,
+}
+\lstdefinestyle{lgeneral}{
+  style = lfonts,
+  style = lnumbers,
+  style = llayout,
+  style = lgeometry,
+}
+\lstdefinestyle{mathescape}{
+  mathescape = true,
+  escapechar = \%,
+}
+\lstdefinestyle{cpp}{
+  language = {C++},
+  style = {lgeneral},
+  morekeywords = {constexpr, noexcept, nullptr, override, auto, string}
+}
+\lstdefinestyle{ltx}{
+  language = {[LaTeX]TeX},
+  style = {lgeneral},
+}
+\lstdefinestyle{py}{
+  language = {Python},
+  style = {lgeneral},
+}
+\lstdefinestyle{sh}{
+  language = {sh},
+  style = {lgeneral},
+}
+\lstdefinestyle{java}{
+  language = {Java},
+  style = {lgeneral},
 }
 
 %%%%%%%%%%%%%%%%%%%%%%
