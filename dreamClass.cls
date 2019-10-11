@@ -226,3 +226,4 @@
 % 私人化
 %%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\code}{\texttt}
+\RequirePackage{amssymb}
