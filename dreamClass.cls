@@ -57,9 +57,29 @@
 %%%%%%%%%%%%%%%%%%%%%%
 % 英文字体
 %%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage{concmath}
-\RequirePackage[T1]{fontenc}
-
+% \RequirePackage{concmath}
+% \RequirePackage[T1]{fontenc}
+% 衬线字体：Linux Libertine
+% BoldFont 可以选择 Bold 字重或者 Semibold 字重
+% BoldItalicFont 也有对应 BoldFont 的字重选择
+% 这里使用 Semibold 字重
+\setmainfont{LinLibertine_R.otf}[
+BoldFont = LinLibertine_RZ.otf,
+ItalicFont = LinLibertine_RI.otf,
+BoldItalicFont = LinLibertine_RZI.otf,
+]
+% 无衬线字体：Linux Biolinum
+\setsansfont{LinBiolinum_R.otf}[
+BoldFont = LinBiolinum_RB.otf,
+ItalicFont = LinBiolinum_RI.otf,
+BoldItalicFont = LinBiolinum_RBO.otf
+]
+% 用 TeX Gyre Cursor，和 Light 字重搭配挺好看的
+\setmonofont{texgyrecursor-regular.otf}[
+BoldFont = texgyrecursor-bold.otf,
+ItalicFont = texgyrecursor-italic.otf,
+BoldItalicFont = texgyrecursor-bolditalic.otf
+]
 %%%%%%%%%%%%%%%%%%%%%%
 % 代码
 %%%%%%%%%%%%%%%%%%%%%%
