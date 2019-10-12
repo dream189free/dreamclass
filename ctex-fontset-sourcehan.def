@@ -86,7 +86,7 @@
     \sys_if_engine_uptex:TF
       {
         \ctex_set_upfonts:nnnnnnn
-          {SourceHanSerifCN-Light.ttf} {SourceHanSansCN-Medium.ttf}
+          {SourceHanSerifCN-Light.ttf} {SourceHanSerifCN-Medium.ttf}
           {FZXKTK.ttf} {FZShengSKSJW_Cu.ttf}
           {SourceHanSansCN-Light.ttf} {SourceHanSansCN-Medium.ttf}
           {FZFSK.ttf}

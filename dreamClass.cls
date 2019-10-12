@@ -166,6 +166,7 @@ BoldItalicFont = texgyrecursor-bolditalic.otf
 %%%%%%%%%%%%%%%%%%%%%%
 % 算法，algorithm2e
 %%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{amssymb}
 \RequirePackage[ruled, linesnumbered, noend, vlined]{algorithm2e}
 \SetAlgorithmName{算法}{algorithmautoref}{算法列表}
 \SetKwInput{KwData}{输入}
@@ -250,4 +251,3 @@ BoldItalicFont = texgyrecursor-bolditalic.otf
 % 私人化
 %%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\code}{\texttt}
-\RequirePackage{amssymb}
