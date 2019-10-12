@@ -40,21 +40,21 @@
             \setCJKmainfont
               [
                       cmap = UniGB-UTF16-H ,
-                  BoldFont = SourceHanSerifCN-Regular.ttf ,
+                  BoldFont = SourceHanSerifCN-Medium.ttf ,
                 ItalicFont = FZXKTK.ttf
               ] { SourceHanSerifCN-Light.ttf }
             \setCJKsansfont
               [       cmap = UniGB-UTF16-H ，
-                  BoldFont = SourceHanSansCN-Regular.ttf
+                  BoldFont = SourceHanSansCN-Medium.ttf
               ] { SourceHanSansCN-Light.ttf }
             \setCJKmonofont [ cmap = UniGB-UTF16-H ] { FZFSK.ttf }
             \setCJKfamilyfont { zhsong }
               [       cmap = UniGB-UTF16-H ，
-                  BoldFont = SourceHanSerifCN-Regular.ttf
+                  BoldFont = SourceHanSerifCN-Medium.ttf
               ] { SourceHanSerifCN-Light.ttf }
             \setCJKfamilyfont { zhhei }
               [       cmap = UniGB-UTF16-H ，
-                  BoldFont = SourceHanSansCN-Regular.ttf
+                  BoldFont = SourceHanSansCN-Medium.ttf
               ] { SourceHanSansCN-Light.ttf }
             \setCJKfamilyfont { zhkai }
               [
@@ -86,9 +86,9 @@
     \sys_if_engine_uptex:TF
       {
         \ctex_set_upfonts:nnnnnnn
-          {SourceHanSerifCN-Light.ttf} {SourceHanSansCN-Regular.ttf}
+          {SourceHanSerifCN-Light.ttf} {SourceHanSansCN-Medium.ttf}
           {FZXKTK.ttf} {FZShengSKSJW_Cu.ttf}
-          {SourceHanSansCN-Light.ttf} {SourceHanSansCN-Regular.ttf}
+          {SourceHanSansCN-Light.ttf} {SourceHanSansCN-Medium.ttf}
           {FZFSK.ttf}
         \ctex_set_upfamily:nnn { zhsong } { upzhserif } { upzhserifb }
         \ctex_set_upfamily:nnn { zhhei } { upzhsans } { upzhsansb }
@@ -98,16 +98,23 @@
       {
         \setCJKmainfont
           [
-            ItalicFont = 方正新楷体_GBK
-          ] { Source~Han~Serif~CN }
-        \setCJKsansfont { Source~Han~Sans~CN }
+            BoldFont = Source~Han~Serif~CN~Medium,
+            ItalicFont = 方正新楷体_GBK,
+            BoldItalicFont = 方正盛世楷书简体_粗
+          ] { Source~Han~Serif~CN~Light }
+        \setCJKsansfont
+          [
+            BoldFont = Source~Han~Sans~CN~Medium,
+            ItalicFont = 方正新楷体_GBK,
+            BoldItalicFont = 方正盛世楷书简体_粗
+          ] { Source~Han~Sans~CN~Light }
         \setCJKmonofont { 方正仿宋_GBK }
-        \setCJKfamilyfont { zhsong } { Source~Han~Serif~CN }
-        \setCJKfamilyfont { zhhei }  { Source~Han~Sans~CN }
+        \setCJKfamilyfont { zhsong } { Source~Han~Serif~CN~Light }
+        \setCJKfamilyfont { zhhei }  { Source~Han~Sans~CN~Light }
         \setCJKfamilyfont { zhfs }   { 方正仿宋_GBK }
         \setCJKfamilyfont { zhkai }
         [
-          BoldFont = 方正盛世楷书简体_粗 ,
+          BoldFont = 方正盛世楷书简体_粗
         ] { 方正新楷体_GBK }
       }
   }

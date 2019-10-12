@@ -59,10 +59,8 @@
 %%%%%%%%%%%%%%%%%%%%%%
 % \RequirePackage{concmath}
 % \RequirePackage[T1]{fontenc}
+
 % 衬线字体：Linux Libertine
-% BoldFont 可以选择 Bold 字重或者 Semibold 字重
-% BoldItalicFont 也有对应 BoldFont 的字重选择
-% 这里使用 Semibold 字重
 \setmainfont{LinLibertine_R.otf}[
 BoldFont = LinLibertine_RZ.otf,
 ItalicFont = LinLibertine_RI.otf,
@@ -74,12 +72,18 @@ BoldFont = LinBiolinum_RB.otf,
 ItalicFont = LinBiolinum_RI.otf,
 BoldItalicFont = LinBiolinum_RBO.otf
 ]
-% 用 TeX Gyre Cursor，和 Light 字重搭配挺好看的
+% TeX Gyre Cursor
 \setmonofont{texgyrecursor-regular.otf}[
 BoldFont = texgyrecursor-bold.otf,
 ItalicFont = texgyrecursor-italic.otf,
 BoldItalicFont = texgyrecursor-bolditalic.otf
 ]
+% % UM Typewriter
+% \setmonofont{UMTypewriter-Regular.otf}[
+% BoldFont = UMTypewriter-Bold.otf,
+% ItalicFont = UMTypewriter-Italic.otf,
+% BoldItalicFont = UMTypewriter-BoldItalic.otf
+% ]
 %%%%%%%%%%%%%%%%%%%%%%
 % 代码
 %%%%%%%%%%%%%%%%%%%%%%
@@ -89,8 +93,8 @@ BoldItalicFont = texgyrecursor-bolditalic.otf
 \lstdefinestyle{lfonts}{
   basicstyle   = \linespread{0.97}\small\ttfamily,
   stringstyle  = \color{purple},
-  keywordstyle = \color{blue!60!black}\bfseries,
-  commentstyle = \color{green!60!black}\scshape,
+  keywordstyle = \color{blue!50!black},
+  commentstyle = \color{green!40!black}\scshape,
 }
 \lstdefinestyle{lnumbers}{
   numbers     = left,
