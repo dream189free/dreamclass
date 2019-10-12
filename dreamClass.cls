@@ -22,7 +22,7 @@
 % linespread = <float>(行距，默认1.3倍)
 % zihao =-4(小四号), 5(五号), false(使用文档类原有设置)
 % fontset = sourcehan(思源), founder(方正)，adobe(奥多比)，windowsnew(中易字体和微软雅黑)等
-\LoadClass[UTF8, fontset = sourcehan, zihao = 5, 12pt, sub3section]{ctexart}
+\LoadClass[UTF8, fontset = sourcehan, 11pt, sub3section]{ctexart}
 % 计数一直到paragraph
 \setcounter{secnumdepth}{4}
 \ctexset{
@@ -91,7 +91,7 @@ BoldItalicFont = texgyrecursor-bolditalic.otf
 \RequirePackage{listings, verbatim}
 \RequirePackage{xcolor}
 \lstdefinestyle{lfonts}{
-  basicstyle   = \linespread{0.97}\small\ttfamily,
+  basicstyle   = \linespread{0.97}\ttfamily,
   stringstyle  = \color{purple},
   keywordstyle = \color{blue!50!black},
   commentstyle = \color{green!40!black}\scshape,
