@@ -1,0 +1,71 @@
+\documentclass{dreamClass}
+
+\title{\heiti\textbf{某门课 \quad 某次作业}}
+\author{123456789 \quad 赵志辉\thanks{\href{mailto:test@example.com}{test@example.com}}}
+\affil{九乡河文理学院}
+\date{\today}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section{听力测试}
+下面开始听力测试，请同学们做好准备。
+
+\subsection{短对话}
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.5\textwidth]{screenshot.jpg}
+    \caption{一张截图}\label{pic:desktop}
+\end{figure}
+听下面五段对话，每段对话后有一个小题，从题中所给的A、B、C三个选项中，选出最佳选项。听每段对话前，你将有五秒钟的时间阅读各小题的内容。每段对话读一遍。
+现在，你有五秒钟的时间看试卷上的例题如\autoref{pic:desktop}。
+\subsection{例题}
+例如，你将听到以下内容：
+% 作为浮动体的代码块
+\begin{listing}
+    \caption{凑字数用的代码\label{code:junk}}
+    \begin{minted}{cpp}
+    #include <iostream>
+    using namespace std;
+    int main(void) {
+        int a = 0;
+        cout << "hello, world" << endl;
+        // 现在是谁在驾驶？我想是牛顿在驾驶。
+        Driver newton;
+        vector<Thing> everyThing;
+        // 上帝说：让牛顿去吧。于是一切都被照亮。
+        for (auto thing : everyThing) {
+            newton.lightup(thing);
+        }
+        return 0;
+    }
+    \end{minted}
+\end{listing}
+% 行内的代码片段
+衬衫的价格\mintinline{cpp}{wstring price = L"九磅十五便士"}，所以你选择B项，并标在试卷上。
+
+\subsection{听力考试到此结束}
+现在，你有两分钟的时间，将试卷上的答案转涂到客观题答题卡上。
+% 并非浮动体的代码块
+\begin{codeblock}
+    \caption{复读机\label{code:junk-again}}
+    \begin{minted}{cpp}
+    #include <iostream>
+    using namespace std;
+    int main(void) {
+        int a = 0;
+        cout << "hello, world" << endl;
+        // 现在是谁在驾驶？我想是牛顿在驾驶。
+        Driver newton;
+        vector<Thing> everyThing;
+        // 上帝说：让牛顿去吧。于是一切都被照亮。
+        for (auto thing : everyThing) {
+            newton.lightup(thing);
+        }
+        return 0;
+    }
+    \end{minted}
+\end{codeblock}
+
+\end{document}

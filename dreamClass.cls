@@ -139,7 +139,7 @@
 \RequirePackage{wrapfig}
 \graphicspath{
     {resources/}
-        {pic/}
+    {pic/}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%

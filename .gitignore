@@ -1,1 +1,5 @@
-*.Identifier
+*/*.aux
+*/*.log
+*/*.out
+*/pic/
+_minted-*/
