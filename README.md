@@ -24,7 +24,7 @@
 
 如果您是从TeX Live 2019的安装镜像中进行安装的，并且发现真的找不到这些字体，这说明您确实没有正确地安装它。可以参考[System font configuration for XeTEX and LuaTEX](http://www.tug.org/texlive/doc/texlive-en/texlive-en.html#x1-340003.4.4)解决。
 
-或者如果不愿看的话，执行下面几条指令，其中`TEXMFSYSVAR = /usr/local/texlive/2019/`。
+或者如果不愿看的话，执行下面几条指令，其中`TEXMFSYSVAR = /usr/local/texlive/2019/texmf-var`。
 
 ```
 sudo cp TEXMFSYSVAR/fonts/conf/texlive-fontconfig.conf /etc/fonts/conf.d/09-texlive.conf
