@@ -154,8 +154,9 @@
 \RequirePackage{aliascnt}
 \RequirePackage[colorlinks, linkcolor=red!80!black, anchorcolor=blue!80!black, citecolor=green!80!black]{hyperref}
 
-\setminted[cpp]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=2mm}
-\setminted[text]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=2mm}
+\setminted[cpp]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
+\setminted[text]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
+\setminted[Verilog]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
 
 \newenvironment{codeblock}{\captionsetup{type=listing}}{}
 \SetupFloatingEnvironment{listing}{name=代码}
