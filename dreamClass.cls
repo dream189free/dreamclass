@@ -35,12 +35,17 @@
 %%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage[paper=a4paper]{geometry}
-% MS Word的默认页边距
 \geometry{
+    % MS Word的默认页边距
+    % top = 2.54cm,
+    % bottom = 2.54cm,
+    % left = 3.18cm,
+    % right = 3.18cm
+    % MS Word的中等页边距
     top = 2.54cm,
     bottom = 2.54cm,
-    left = 3.18cm,
-    right = 3.18cm
+    left = 1.91cm, 
+    right = 1.91cm
 }
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -153,25 +158,17 @@
 \RequirePackage{xcolor}
 \RequirePackage{aliascnt}
 \RequirePackage[colorlinks, linkcolor=red!80!black, anchorcolor=blue!80!black, citecolor=green!80!black]{hyperref}
-\RequirePackage{etoolbox}
-\RequirePackage{xpatch}
 
 \setminted[cpp]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
 \setminted[text]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
 \setminted[Verilog]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
-\usemintedstyle{friendly}
+\setminted[Makefile]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
+\usemintedstyle{colorful}
 
 \newenvironment{codeblock}{\captionsetup{type=listing}}{}
 \SetupFloatingEnvironment{listing}{name=代码}
 \SetupFloatingEnvironment{listing}{listname=代码列表}
 \providecommand*{\listingautorefname}{代码}
-
-\makeatletter
-\AtBeginEnvironment{minted}{\dontdofcolorbox}
-\def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
-\xpatchcmd{\inputminted}{\minted@fvset}{\minted@fvset\dontdofcolorbox}{}{}
-\xpatchcmd{\mintinline}{\minted@fvset}{\minted@fvset\dontdofcolorbox}{}{}
-\makeatother
 
 % 从jyy老师的山寨nju-thesis里抄来的
 \DeclareCaptionFormat{plain}{\heiti{\small \textbf{#1}#2#3}}
