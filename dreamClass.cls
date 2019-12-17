@@ -163,6 +163,7 @@
 \setminted[text]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
 \setminted[Verilog]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
 \setminted[Makefile]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
+\setminted[gas]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
 \usemintedstyle{colorful}
 
 \newenvironment{codeblock}{\captionsetup{type=listing}}{}
