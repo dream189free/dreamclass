@@ -39,6 +39,18 @@ sudo pip3 install Pygments
 ```
 大概能work。
 
+如果没有安装`pip3`并且您正在使用`apt`作为包管理工具的话，可以使用
+```
+sudo apt install python3-pip
+```
+来安装。
+
+如果`pip3`下载速度过于缓慢，可以参考[这里](https://mirrors.ustc.edu.cn/help/pypi.html)提供的方法把源切换到国内的镜像：
+```
+pip3 install -i https://mirrors.ustc.edu.cn/pypi/web/simple pip -U
+pip3 config set global.index-url https://mirrors.ustc.edu.cn/pypi/web/simple
+```
+
 需要注意，在使用minted宏包之后，XeLaTeX的编译参数需要加上`-shell-escape`。
 
 ## 用法
@@ -65,6 +77,20 @@ install YAML::Tiny
 install File::HomeDir
 install Unicode::GCString
 ```
+
+如果下载速度慢到无法忍受，可以首先运行`cpan`：
+```
+sudo cpan
+```
+并让其自动配置尽可能多的选项（大约需要您手动输入`yes`然后回车）。
+然后进入`cpan`的shell，接着用：
+```
+o conf urllist http://mirrors.sohu.com/CPAN
+o conf commit
+```
+把`cpan`的源换成国内的某个镜像。
+
+最后**坐和放宽**，耐心等待所有依赖安装完毕。
 
 ### LaTeX入门
 如果其实您根本就不懂如何使用LaTeX，我们强烈推荐您通过阅读[lshort-zh-cn](https://github.com/CTeX-org/lshort-zh-cn/releases)来入门。
