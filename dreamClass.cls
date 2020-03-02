@@ -44,7 +44,7 @@
     % MS Word的中等页边距
     top = 2.54cm,
     bottom = 2.54cm,
-    left = 1.91cm, 
+    left = 1.91cm,
     right = 1.91cm
 }
 
@@ -191,3 +191,9 @@
 \renewcommand{\subparagraphautorefname}{子段落}
 \renewcommand{\FancyVerbLineautorefname}{行}
 \renewcommand{\theoremautorefname}{定理}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% 参考文献
+%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage[numbers]{gbt7714}
