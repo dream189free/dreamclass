@@ -33,24 +33,11 @@
 \begin{listing}
     \caption{凑字数用的代码\label{code:junk}}
     \begin{minted}{cpp}
-    #include <iostream>
-    using namespace std;
-    int main(void) {
-        int a = 0;
-        cout << "hello, world" << endl;
-        // 现在是谁在驾驶？我想是牛顿在驾驶。
-        Driver newton;
-        vector<Thing> everyThing;
-        // 上帝说：让牛顿去吧。于是一切都被照亮。
-        for (auto thing : everyThing) {
-            newton.lightup(thing);
-        }
-        return 0;
-    }
+    int main() {}
     \end{minted}
 \end{listing}
 % 行内的代码片段
-衬衫的价格\mintinline{cpp}{wstring price = L"九磅十五便士"}，所以你选择B项，并标在试卷上。
+衬衫的价格\mintinline{cpp}{wstring price = L"九磅十五便士"}。
 
 \subsection{听力考试到此结束}
 现在，你有两分钟的时间，将试卷上的答案转涂到客观题答题卡上。
@@ -58,21 +45,14 @@
 \begin{codeblock}
     \caption{复读机\label{code:junk-again}}
     \begin{minted}{cpp}
-    #include <iostream>
-    using namespace std;
-    int main(void) {
-        int a = 0;
-        cout << "hello, world" << endl;
-        // 现在是谁在驾驶？我想是牛顿在驾驶。
-        Driver newton;
-        vector<Thing> everyThing;
-        // 上帝说：让牛顿去吧。于是一切都被照亮。
-        for (auto thing : everyThing) {
-            newton.lightup(thing);
-        }
-        return 0;
-    }
+    int main() {}
     \end{minted}
+\end{codeblock}
+
+% 使用文件作为代码块的内容
+\begin{codeblock}
+    \caption{\texttt{Engine.hpp}的内容}
+    \inputminted{cpp}{../code/engine/Engine.hpp}
 \end{codeblock}
 
 \end{document}
