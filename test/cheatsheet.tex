@@ -1,7 +1,7 @@
 \documentclass{dreamClass}
 
 \title{\heiti\textbf{某门课 \quad 某次作业}}
-\author{123456789 \quad 赵志辉\thanks{\href{mailto:test@example.com}{test@example.com}}}
+\author{123456789 赵志辉\thanks{\href{mailto:test@example.com}{test@example.com}}}
 \affil{九乡河文理学院}
 \date{\today}
 
@@ -9,39 +9,29 @@
 \maketitle
 \thispagestyle{empty}
 
-\section{听力测试}
-下面开始听力测试，请同学们做好准备。
-% 带圆圈的编号列表
+\section{喵}
+下面是带圆圈的编号列表：
 \begin{enumerate}[label=\large\protect\textcircled{\small\arabic*}]
-    \item First item
-    \item Second item
-    \item Third item
-    \item Fourth item
+    \item 喵
+    \item 喵
 \end{enumerate}
 
-\subsection{短对话}
+\autoref{pic:desktop}是一幅插图。
 \begin{figure}
     \centering
     \includegraphics[width = 0.5\textwidth]{screenshot.jpg}
     \caption{一张截图}\label{pic:desktop}
 \end{figure}
-听下面五段对话，每段对话后有一个小题，从题中所给的A、B、C三个选项中，选出最佳选项。听每段对话前，你将有五秒钟的时间阅读各小题的内容。每段对话读一遍。
-现在，你有五秒钟的时间看试卷上的例题如\autoref{pic:desktop}。
-\subsection{例题}
-例如，你将听到以下内容：
-% 作为浮动体的代码块
+
+\autoref{code:junk}是作为浮动体的代码块：
 \begin{listing}
     \caption{凑字数用的代码\label{code:junk}}
     \begin{minted}{cpp}
     int main() {}
     \end{minted}
 \end{listing}
-% 行内的代码片段
-衬衫的价格\mintinline{cpp}{wstring price = L"九磅十五便士"}。
 
-\subsection{听力考试到此结束}
-现在，你有两分钟的时间，将试卷上的答案转涂到客观题答题卡上。
-% 并非浮动体的代码块
+\autoref{code:junk-again}是并非浮动体的代码块：
 \begin{codeblock}
     \caption{复读机\label{code:junk-again}}
     \begin{minted}{cpp}
@@ -49,10 +39,33 @@
     \end{minted}
 \end{codeblock}
 
-% 使用文件作为代码块的内容
+这是行内的代码片段：\mintinline{cpp}{wstring price = L"九磅十五便士"}。
+
+\autoref{code:engine}是使用文件作为代码块的内容：
 \begin{codeblock}
-    \caption{\texttt{Engine.hpp}的内容}
+    \caption{\texttt{Engine.hpp}的内容\label{code:engine}}
     \inputminted{cpp}{../code/engine/Engine.hpp}
 \end{codeblock}
 
+下面是一些数学式：
+\[
+    \begin{align*}
+        P(x) & = \int_{0}^{x} \beta e^{ - \beta x} \dif x \\
+             & = \int_{0}^{\beta x} e^{ - t} \dif t       \\
+             & = - e^{ - u} \Big|_{0}^{\beta x}           \\
+             & = 1 - e^{ - \beta x}\text{。}
+    \end{align*}
+\]
+\[
+    \begin{aligned}
+        \begin{array}{cl}
+            \text{maximize} & H = \bm{p}^T\bm{q} \\
+            \text{ s.t. }   & \bm{p}^T\bm{1} - 1 = 0\text{。}
+        \end{array}
+    \end{aligned}
+\]
+考虑\(\mathbf{H}_{i j}=\frac{\partial^{2} f}{\partial x_{i} \partial x_{j}}\)。
+又\(\operatorname{Pr}(X \geq 10^3 + 2000 | X \geq 2000) = \operatorname{Pr}(X \geq 10^3)\)，
+
+Matlab的在线手册告诉我们\footnote{见\href{https://www.mathworks.com/help/matlab/ref/power.html}{https://www.mathworks.com/help/matlab/ref/power.html}}：
 \end{document}
