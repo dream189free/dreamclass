@@ -80,6 +80,8 @@
 %%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{amsmath}
+\RequirePackage{bm}
+\newcommand*{\dif}{\mathop{}\!\mathrm{d}}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 定理
