@@ -67,5 +67,20 @@
 考虑\(\mathbf{H}_{i j}=\frac{\partial^{2} f}{\partial x_{i} \partial x_{j}}\)。
 又\(\operatorname{Pr}(X \geq 10^3 + 2000 | X \geq 2000) = \operatorname{Pr}(X \geq 10^3)\)，
 
+下面是一个\texttt{minipage}的示例，得到\autoref{pic:pr}和\autoref{pic:roc}。
+\begin{figure}
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{pr.pdf}
+        \caption{P-R曲线\label{pic:pr}}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{roc.pdf}
+        \caption{ROC曲线\label{pic:roc}}
+    \end{minipage}
+\end{figure}
+
 Matlab的在线手册告诉我们\footnote{见\href{https://www.mathworks.com/help/matlab/ref/power.html}{https://www.mathworks.com/help/matlab/ref/power.html}}：
 \end{document}
