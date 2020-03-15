@@ -67,6 +67,12 @@
 考虑\(\mathbf{H}_{i j}=\frac{\partial^{2} f}{\partial x_{i} \partial x_{j}}\)。
 又\(\operatorname{Pr}(X \geq 10^3 + 2000 | X \geq 2000) = \operatorname{Pr}(X \geq 10^3)\)，
 
+所以\(I * F = \begin{bmatrix}
+    2 & -2  & 1 & - 1 \\
+    4 & - 5 & 4 & - 3 \\
+    2 & - 3 & 3 & - 2
+\end{bmatrix}\)
+
 下面是一个\texttt{minipage}的示例，得到\autoref{pic:pr}和\autoref{pic:roc}。
 \begin{figure}
     \centering
@@ -82,5 +88,5 @@
     \end{minipage}
 \end{figure}
 
-Matlab的在线手册告诉我们\footnote{见\href{https://www.mathworks.com/help/matlab/ref/power.html}{https://www.mathworks.com/help/matlab/ref/power.html}}：
+本证明受\href{https://datawhalechina.github.io/pumpkin-book/#/chapter2/chapter2?id=221}{这个网页}启发。
 \end{document}
