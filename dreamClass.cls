@@ -57,7 +57,7 @@
 % https://www.zhihu.com/question/20563044/answer/15494226
 
 % 衬线字体：Linux Libertine
-\setmainfont{LinLibertine_R.otf}[
+\setmainfont{LinLibertine_DR.otf}[
     BoldFont = LinLibertine_RZ.otf,
     ItalicFont = LinLibertine_RI.otf,
     BoldItalicFont = LinLibertine_RZI.otf,
@@ -68,12 +68,14 @@
     ItalicFont = LinBiolinum_RI.otf,
     BoldItalicFont = LinBiolinum_RBO.otf
 ]
-% TeX Gyre Cursor
-\setmonofont{texgyrecursor-regular.otf}[
-    BoldFont = texgyrecursor-bold.otf,
-    ItalicFont = texgyrecursor-italic.otf,
-    BoldItalicFont = texgyrecursor-bolditalic.otf
-]
+% % TeX Gyre Cursor
+% \setmonofont{texgyrecursor-regular.otf}[
+%     BoldFont = texgyrecursor-bold.otf,
+%     ItalicFont = texgyrecursor-italic.otf,
+%     BoldItalicFont = texgyrecursor-bolditalic.otf
+% ]
+
+\setmonofont{等距更纱黑体 Slab SC Light}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 公式和符号
@@ -127,7 +129,7 @@
 %%%%%%%%%%%%%%%%%%%%%%
 
 % 还是从jyy老师的山寨nju-thesis里抄来的
-\RequirePackage{enumitem}
+\RequirePackage[shortlabels]{enumitem}
 \setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=3pt}
 \setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=3pt}
 \setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=3pt}
@@ -148,6 +150,7 @@
     {resources/}
     {pic/}
 }
+\RequirePackage{multirow}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 说明文字、代码（minted）和浮动体
@@ -161,14 +164,27 @@
 \RequirePackage{aliascnt}
 \RequirePackage[colorlinks, linkcolor=red!80!black, anchorcolor=blue!80!black, citecolor=green!80!black]{hyperref}
 
-\setminted[cpp]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
-\setminted[text]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
-\setminted[Verilog]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
-\setminted[Makefile]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
-\setminted[gas]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
-\setminted[Matlab]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
-\setminted[Python]{linenos, autogobble, breaklines, breakanywhere, frame=lines, framesep=1.5mm, baselinestretch = 0.93}
-\usemintedstyle{colorful}
+\setminted[cpp]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
+\setminted[text]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
+\setminted[Verilog]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
+\setminted[Makefile]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
+\setminted[bash]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
+\setminted[Matlab]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
+\setminted[Python]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
+\setminted[Java]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
+\setminted[xml]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
+\setminted[sql]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
+
+% remove colorbox and fcolorbox style from minted
+\usepackage{etoolbox,xpatch}
+\makeatletter
+\AtBeginEnvironment{minted}{\dontdofcolorbox}
+\def\dontdofcolorbox{
+    \renewcommand\fcolorbox[4][]{##4}
+}
+\xpatchcmd{\inputminted}{\minted@fvset}{\minted@fvset\dontdofcolorbox}{}{}
+\xpatchcmd{\mintinline}{\minted@fvset}{\minted@fvset\dontdofcolorbox}{}{}
+\makeatother
 
 \newenvironment{codeblock}{\captionsetup{type=listing}}{}
 \SetupFloatingEnvironment{listing}{name=代码}

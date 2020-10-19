@@ -47,7 +47,7 @@
               [       cmap = UniGB-UTF16-H ，
                   BoldFont = SourceHanSansCN-Medium.ttf
               ] { SourceHanSansCN-Light.ttf }
-            \setCJKmonofont [ cmap = UniGB-UTF16-H ] { FZFSK.ttf }
+            \setCJKmonofont [ cmap = UniGB-UTF16-H ] { sarasa-mono-slab-sc-light.ttf }
             \setCJKfamilyfont { zhsong }
               [       cmap = UniGB-UTF16-H ，
                   BoldFont = SourceHanSerifCN-Medium.ttf
@@ -58,11 +58,11 @@
               ] { SourceHanSansCN-Light.ttf }
             \setCJKfamilyfont { zhkai }
               [
-                cmap     = UniGB-UTF16-H ,
-                BoldFont = FZShengSKSJW_Cu.ttf
+                      cmap = UniGB-UTF16-H ,
+                  BoldFont = FZShengSKSJW_Cu.ttf
               ] { FZXKTK.ttf }
             \setCJKfamilyfont { zhfs }
-              [ cmap = UniGB-UTF16-H ] { FZFSK.ttf }
+              [ cmap = UniGB-UTF16-H ] { sarasa-mono-slab-sc-light.ttf }
             \ctex_punct_set:n { sourcehan }
             \ctex_punct_map_family:nn { \CJKrmdefault } { zhsong }
             \ctex_punct_map_family:nn { \CJKsfdefault } { zhhei }
@@ -89,7 +89,7 @@
           {SourceHanSerifCN-Light.ttf} {SourceHanSerifCN-Medium.ttf}
           {FZXKTK.ttf} {FZShengSKSJW_Cu.ttf}
           {SourceHanSansCN-Light.ttf} {SourceHanSansCN-Medium.ttf}
-          {FZFSK.ttf}
+          {sarasa-mono-slab-sc-light.ttf}
         \ctex_set_upfamily:nnn { zhsong } { upzhserif } { upzhserifb }
         \ctex_set_upfamily:nnn { zhhei } { upzhsans } { upzhsansb }
         \ctex_set_upfamily:nnn { zhfs } { upzhmono } {}
@@ -108,13 +108,16 @@
             ItalicFont = 方正新楷体_GBK,
             BoldItalicFont = 方正盛世楷书简体_粗
           ] { Source~Han~Sans~CN~Light }
-        \setCJKmonofont { 方正仿宋_GBK }
+        \setCJKmonofont
+          [
+            BoldFont = 等距更纱黑体~Slab~SC,
+          ] { 等距更纱黑体~Slab~SC~Light }
         \setCJKfamilyfont { zhsong } { Source~Han~Serif~CN~Light }
         \setCJKfamilyfont { zhhei }  { Source~Han~Sans~CN~Light }
-        \setCJKfamilyfont { zhfs }   { 方正仿宋_GBK }
+        \setCJKfamilyfont { zhfs }   { 等距更纱黑体~Slab~SC~Light }
         \setCJKfamilyfont { zhkai }
         [
-          BoldFont = 方正盛世楷书简体_粗
+            BoldFont = 方正盛世楷书简体_粗
         ] { 方正新楷体_GBK }
       }
   }
