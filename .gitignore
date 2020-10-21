@@ -3,3 +3,4 @@
 */*.out
 */pic/
 _minted-*/
+*/*.synctex.gz

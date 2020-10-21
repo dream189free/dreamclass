@@ -17,9 +17,9 @@
 \end{enumerate}
 
 \autoref{pic:desktop}是一幅插图。
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \includegraphics[width = 0.5\textwidth]{screenshot.jpg}
+    \includegraphics[width = 0.5\textwidth]{pic/screenshot.jpg}
     \caption{一张截图}\label{pic:desktop}
 \end{figure}
 
@@ -28,23 +28,23 @@
     \centering
     \begin{minipage}{.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{pic/flag/flag_500kb.png}
+        \includegraphics[width=\textwidth]{pic/screenshot.jpg}
         \caption{500KB}
     \end{minipage}%
     \begin{minipage}{.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{pic/flag/flag_200kb.png}
+        \includegraphics[width=\textwidth]{pic/screenshot.jpg}
         \caption{200KB}
     \end{minipage}
 
     \begin{minipage}{.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{pic/flag/flag_100kb.png}
+        \includegraphics[width=\textwidth]{pic/screenshot.jpg}
         \caption{100KB}
     \end{minipage}%
     \begin{minipage}{.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{pic/flag/flag_50kb.png}
+        \includegraphics[width=\textwidth]{pic/screenshot.jpg}
         \caption{50KB}
     \end{minipage}
     \caption{相机拍摄的FLIF格式的图片在不同位置截断后的效果\label{pic:flag}}
@@ -72,17 +72,17 @@
 \autoref{code:engine}是使用文件作为代码块的内容：
 \begin{codeblock}
     \caption{\texttt{Engine.hpp}的内容\label{code:engine}}
-    \inputminted{cpp}{../code/engine/Engine.hpp}
+    \inputminted{cpp}{code/test.cpp}
 \end{codeblock}
 
 下面是一些数学式：
 \[
-    \begin{align*}
+    \begin{aligned}
         P(x) & = \int_{0}^{x} \beta e^{ - \beta x} \dif x \\
              & = \int_{0}^{\beta x} e^{ - t} \dif t       \\
              & = - e^{ - u} \Big|_{0}^{\beta x}           \\
              & = 1 - e^{ - \beta x}\text{。}
-    \end{align*}
+    \end{aligned}
 \]
 \[
     \begin{aligned}
@@ -106,12 +106,12 @@
     \centering
     \begin{minipage}{.5\textwidth}
         \centering
-        \includegraphics[width = \textwidth]{pr.pdf}
+        \includegraphics[width = \textwidth]{pic/screenshot.jpg}
         \caption{P-R曲线\label{pic:pr}}
     \end{minipage}%
     \begin{minipage}{.5\textwidth}
         \centering
-        \includegraphics[width = \textwidth]{roc.pdf}
+        \includegraphics[width = \textwidth]{pic/screenshot.jpg}
         \caption{ROC曲线\label{pic:roc}}
     \end{minipage}
 \end{figure}
