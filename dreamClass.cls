@@ -216,4 +216,4 @@
 % 参考文献
 %%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[numbers]{gbt7714}
+\RequirePackage{gbt7714}
