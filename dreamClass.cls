@@ -164,17 +164,7 @@
 \RequirePackage{xcolor}
 \RequirePackage{aliascnt}
 \RequirePackage[colorlinks, linkcolor=red!80!black, anchorcolor=blue!80!black, citecolor=green!80!black]{hyperref}
-
-\setminted[cpp]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
-\setminted[text]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
-\setminted[Verilog]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
-\setminted[Makefile]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
-\setminted[bash]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
-\setminted[Matlab]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
-\setminted[Python]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
-\setminted[Java]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
-\setminted[xml]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
-\setminted[sql]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
+\setminted{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4, baselinestretch=0.93}
 
 % remove colorbox and fcolorbox style from minted
 \makeatletter
