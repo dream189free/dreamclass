@@ -37,15 +37,15 @@
 \RequirePackage[paper=a4paper]{geometry}
 \geometry{
     % MS Word的默认页边距
-    % top = 2.54cm,
-    % bottom = 2.54cm,
-    % left = 3.18cm,
-    % right = 3.18cm
-    % MS Word的中等页边距
     top = 2.54cm,
     bottom = 2.54cm,
-    left = 1.91cm,
-    right = 1.91cm
+    left = 3.18cm,
+    right = 3.18cm
+    % MS Word的中等页边距
+    % top = 2.54cm,
+    % bottom = 2.54cm,
+    % left = 1.91cm,
+    % right = 1.91cm
 }
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -75,7 +75,7 @@
 %     BoldItalicFont = texgyrecursor-bolditalic.otf
 % ]
 
-\setmonofont{等距更纱黑体 Slab SC Light}
+\setmonofont[Scale=.9]{等距更纱黑体 Slab SC Light}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 公式和符号
@@ -109,7 +109,9 @@
 \SetAlgorithmName{算法}{algorithmautoref}{算法列表}
 \SetKwInput{KwData}{输入}
 \SetKwInput{KwResult}{输出}
-\SetAlFnt{\ttfamily}
+\RequirePackage{etoolbox,xpatch}
+\AtBeginEnvironment{algorithm}{\let\textnormal\ttfamily}
+\SetAlFnt{\small}
 \SetKw{Continue}{\textbf continue}
 \SetKw{Break}{\textbf break}
 \SetKwRepeat{Do}{do}{while}
@@ -135,7 +137,7 @@
 \setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=3pt}
 
 %%%%%%%%%%%%%%%%%%%%%%
-% 地址
+% 作者
 %%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{authblk}
@@ -146,10 +148,7 @@
 
 \RequirePackage{graphicx}
 \RequirePackage{wrapfig}
-\graphicspath{
-    {resources/}
-    {pic/}
-}
+\graphicspath{{resources/}{pic/}}
 \RequirePackage{multirow}
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -159,6 +158,8 @@
 \RequirePackage[section]{placeins}
 \RequirePackage{float}
 \RequirePackage[compatibility=false]{caption}
+\RequirePackage{subcaption}
+\RequirePackage{booktabs}
 \RequirePackage[section, newfloat]{minted}
 \RequirePackage{xcolor}
 \RequirePackage{aliascnt}
@@ -176,7 +177,6 @@
 \setminted[sql]{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4}
 
 % remove colorbox and fcolorbox style from minted
-\usepackage{etoolbox,xpatch}
 \makeatletter
 \AtBeginEnvironment{minted}{\dontdofcolorbox}
 \def\dontdofcolorbox{
