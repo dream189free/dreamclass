@@ -163,7 +163,25 @@
 \RequirePackage[section, newfloat]{minted}
 \RequirePackage{xcolor}
 \RequirePackage{aliascnt}
-\RequirePackage[colorlinks, linkcolor=red!80!black, anchorcolor=blue!80!black, citecolor=green!80!black]{hyperref}
+\RequirePackage{hyperref}
+
+\hypersetup{
+    pdfencoding=unicode,
+    pageanchor=true,
+    CJKbookmarks=true,
+    bookmarksnumbered=true,
+    bookmarksopen=true,
+    bookmarksopenlevel=0,
+    breaklinks=true,
+    colorlinks=false,
+    plainpages=false,
+    pdfborder=0 0 0,
+    colorlinks=true,
+    linkcolor=red!50!black,
+    anchorcolor=blue!50!black,
+    citecolor=green!50!black
+}
+
 \setminted{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4, baselinestretch=0.93}
 
 % remove colorbox and fcolorbox style from minted
@@ -207,3 +225,5 @@
 %%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{gbt7714}
+
+\RequirePackage{tikz}
