@@ -56,26 +56,40 @@
 % 对于不了解字体的人，在使用LaTeX排版时如何通过fontspec包选择字体？ - Clerk Ma的回答 - 知乎
 % https://www.zhihu.com/question/20563044/answer/15494226
 
-% 衬线字体：Linux Libertine
-\setmainfont{LinLibertine_DR.otf}[
-    BoldFont = LinLibertine_RZ.otf,
-    ItalicFont = LinLibertine_RI.otf,
-    BoldItalicFont = LinLibertine_RZI.otf,
-]
-% 无衬线字体：Linux Biolinum
-\setsansfont{LinBiolinum_R.otf}[
-    BoldFont = LinBiolinum_RB.otf,
-    ItalicFont = LinBiolinum_RI.otf,
-    BoldItalicFont = LinBiolinum_RBO.otf
-]
-% % TeX Gyre Cursor
-% \setmonofont{texgyrecursor-regular.otf}[
-%     BoldFont = texgyrecursor-bold.otf,
-%     ItalicFont = texgyrecursor-italic.otf,
-%     BoldItalicFont = texgyrecursor-bolditalic.otf
+% \setmainfont[Scale=1.05]{LinLibertine_DR.otf}[
+%     BoldFont = LinLibertine_RZ.otf,
+%     ItalicFont = LinLibertine_RI.otf,
+%     BoldItalicFont = LinLibertine_RZI.otf,
+% ]
+% \setsansfont{LinBiolinum_R.otf}[
+%     BoldFont = LinBiolinum_RB.otf,
+%     ItalicFont = LinBiolinum_RI.otf,
+%     BoldItalicFont = LinBiolinum_RBO.otf
+% ]
+% \setmonofont[Scale=.9]{Sarasa-Mono-Slab-SC-Light}[
+%     BoldFont = Sarasa-Mono-Slab-SC-Regular,
+%     ItalicFont = Sarasa-Mono-Slab-SC-Light-Italic,
+%     BoldItalicFont = Sarasa-Mono-Slab-SC-Italic,
 % ]
 
-\setmonofont[Scale=.9]{等距更纱黑体 Slab SC Light}
+\setromanfont[Scale=1.04]{LibertinusSerif}[
+   UprightFont = *-Regular,
+   BoldFont = *-Bold,
+   ItalicFont = *-Italic,
+   BoldItalicFont = *-BoldItalic,
+   Extension = .otf
+]
+\setsansfont[Scale=1]{LibertinusSans}[
+   UprightFont = *-Regular,
+   BoldFont = *-Bold,
+   ItalicFont = *-Italic,
+   Extension = .otf
+]
+\setmonofont[Scale=.9]{Sarasa-Mono-Slab-SC-Light}[
+    BoldFont = Sarasa-Mono-Slab-SC-Regular,
+    ItalicFont = Sarasa-Mono-Slab-SC-Light-Italic,
+    BoldItalicFont = Sarasa-Mono-Slab-SC-Italic
+]
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 公式和符号
@@ -201,8 +215,12 @@
 \SetupFloatingEnvironment{listing}{listname=代码列表}
 \providecommand*{\listingautorefname}{代码}
 
-% 从jyy老师的山寨nju-thesis里抄来的
-\DeclareCaptionFormat{plain}{\heiti{\small \textbf{#1}#2#3}}
+\DeclareCaptionFont{heitibf}{\bf\heiti}
+\DeclareCaptionFont{heiti}{\heiti}
+\captionsetup{font=small}
+\captionsetup[table]{position=top,textfont=heiti,labelfont=heitibf}
+\captionsetup[figure]{position=below,textfont=heiti,labelfont=heitibf}
+\captionsetup[listing]{position=below,textfont=heiti,labelfont=heitibf}
 
 \renewcommand{\figurename}{图}
 \renewcommand{\tablename}{表}

@@ -8,14 +8,19 @@
 
 ### 中文字体
 
-本项目使用了下面列出的中文字体。如果您不喜欢，请在[CTeX](http://mirrors.ctan.org/language/chinese/ctex/ctex.pdf)的宏包选项中修改`fontset = sourcehan`以避免使用`ctex-fontset-sourcehan.def`所指定的字库。
+本项目使用了下面列出的中文字体。如果您不喜欢，请在[CTeX](http://mirrors.ctan.org/language/chinese/ctex/ctex.pdf)的宏包选项中修改`fontset = sourcehan`以避免使用`ctex-fontset-sourcehan.def`所指定的字体。
 
-- 思源黑体和思源宋体
-    - 我们使用[这个项目](https://github.com/Pal3love/Source-Han-TrueType)中提供的字体。如果您的字体是从别处获得的，它们的文件名（和字体的名字？）或许和我们的对不上，此时需要对应修改`ctex-fontset-sourcehan.def`的内容。
-- 方正新楷体、方正盛世楷书简体_粗和方正仿宋
+- `思源黑体`和`思源宋体`
+    - 可以从Adobe[在GitHub上的相关repo](https://github.com/adobe-fonts)来取得这些文件。`思源黑体`更新频繁，提供细粒度的压缩包，方便选取地区限定的字形；`思源宋体`近年未见更新，也只提供了一个打包了**所有**字形的巨大的压缩包。
+    - 本项目使用的是简体中文限定的思源字体。为方便计，你可以直接从TUNA的镜像中得到需要的文件。[这里](https://mirrors.tuna.tsinghua.edu.cn/adobe-fonts/source-han-sans/SubsetOTF/CN/)是思源黑体的链接，[这里](https://mirrors.tuna.tsinghua.edu.cn/adobe-fonts/source-han-serif/SubsetOTF/CN/)是思源宋体的。
+- `方正新楷体`、`方正盛世楷书简体_粗`和`方正仿宋`
     - 可以在[方正字库](https://www.foundertype.com/)上下载。个人非商用似乎并不收钱。
+- `等距更纱黑体`
+  - 似乎是唯一中英文按照2:1的比例严格对齐的等宽字体。
+  - 可以在[e5invis的GitHub repo](https://github.com/be5invis/Sarasa-Gothic)里下载字体，请下载ttf版本，并且特别注意下载完成后不要直接全部解压——否则会得到**非常多**的字体；网络条件不好的话也可以从[TUNA的镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/be5invis/Sarasa-Gothic/LatestRelease/sarasa-gothic-ttf-0.32.3.7z)下载。
+  - 本项目使用的是`sarasa-mono-slab-sc-*.ttf`，字体名称是`等距更纱黑体 Slab SC`。
 
-上述字体的两个供参考的存放位置是`~/.fonts`和`/usr/share/fonts/WHATEVER_YOU_WANT`。
+上述的两个供参考的存放位置是`~/.fonts`和`/usr/share/fonts/WHATEVER_YOU_WANT`。
 
 ### 英文字体
 
@@ -91,6 +96,8 @@ o conf commit
 把`cpan`的源换成国内的某个镜像。
 
 最后**坐和放宽**，耐心等待所有依赖安装完毕。
+
+macOS用户或许需要特别注意一点：至少，macOS Big Sur中自带的perl似乎不足够完整，以致无法正确地安装前述的依赖。如果你是macOS用户，或许你需要设法搞一个完整的perl来。
 
 ### LaTeX入门
 如果其实您根本就不懂如何使用LaTeX，我们强烈推荐您通过阅读[lshort-zh-cn](https://github.com/CTeX-org/lshort-zh-cn/releases)来入门。

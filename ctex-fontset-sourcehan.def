@@ -40,22 +40,22 @@
             \setCJKmainfont
               [
                       cmap = UniGB-UTF16-H ,
-                  BoldFont = SourceHanSerifCN-Medium.ttf ,
+                  BoldFont = SourceHanSerifCN-Medium.otf ,
                 ItalicFont = FZXKTK.ttf
-              ] { SourceHanSerifCN-Light.ttf }
+              ] { SourceHanSerifCN-Light.otf }
             \setCJKsansfont
               [       cmap = UniGB-UTF16-H ，
-                  BoldFont = SourceHanSansCN-Medium.ttf
-              ] { SourceHanSansCN-Light.ttf }
+                  BoldFont = SourceHanSansCN-Medium.otf
+              ] { SourceHanSansCN-Light.otf }
             \setCJKmonofont [ cmap = UniGB-UTF16-H ] { sarasa-mono-slab-sc-light.ttf }
             \setCJKfamilyfont { zhsong }
               [       cmap = UniGB-UTF16-H ，
-                  BoldFont = SourceHanSerifCN-Medium.ttf
-              ] { SourceHanSerifCN-Light.ttf }
+                  BoldFont = SourceHanSerifCN-Medium.otf
+              ] { SourceHanSerifCN-Light.otf }
             \setCJKfamilyfont { zhhei }
               [       cmap = UniGB-UTF16-H ，
-                  BoldFont = SourceHanSansCN-Medium.ttf
-              ] { SourceHanSansCN-Light.ttf }
+                  BoldFont = SourceHanSansCN-Medium.otf
+              ] { SourceHanSansCN-Light.otf }
             \setCJKfamilyfont { zhkai }
               [
                       cmap = UniGB-UTF16-H ,
@@ -86,9 +86,9 @@
     \sys_if_engine_uptex:TF
       {
         \ctex_set_upfonts:nnnnnnn
-          {SourceHanSerifCN-Light.ttf} {SourceHanSerifCN-Medium.ttf}
+          {SourceHanSerifCN-Light.otf} {SourceHanSerifCN-Medium.otf}
           {FZXKTK.ttf} {FZShengSKSJW_Cu.ttf}
-          {SourceHanSansCN-Light.ttf} {SourceHanSansCN-Medium.ttf}
+          {SourceHanSansCN-Light.otf} {SourceHanSansCN-Medium.otf}
           {sarasa-mono-slab-sc-light.ttf}
         \ctex_set_upfamily:nnn { zhsong } { upzhserif } { upzhserifb }
         \ctex_set_upfamily:nnn { zhhei } { upzhsans } { upzhsansb }
