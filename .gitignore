@@ -1,6 +1,9 @@
-*/*.aux
-*/*.log
-*/*.out
-*/pic/
+**/*.aux
+**/*.log
+**/*.out
+**/*.pdf
+**/*.synctex.gz
+**/pic/
 _minted-*/
-*/*.synctex.gz
+**/.DS_Store
+**/__latexindent_temp.tex

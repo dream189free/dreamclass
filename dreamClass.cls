@@ -182,7 +182,9 @@
     citecolor=green!50!black
 }
 
-\setminted{linenos, autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4, baselinestretch=0.93}
+\setminted{autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4, baselinestretch=1, escapeinside=!!}
+
+\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}
 
 % remove colorbox and fcolorbox style from minted
 \makeatletter
@@ -219,11 +221,17 @@
 \renewcommand{\subparagraphautorefname}{子段落}
 \renewcommand{\FancyVerbLineautorefname}{行}
 \renewcommand{\theoremautorefname}{定理}
+\renewcommand{\algorithmautorefname}{算法}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 参考文献
 %%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{gbt7714}
+
+
+\newcommand{\refc}[1]{第 \ref{#1} 章}
+\newcommand{\refs}[1]{第 \ref{#1} 节}
+\newcommand{\refl}[1]{第 \ref{#1} 行}
 
 \RequirePackage{tikz}
