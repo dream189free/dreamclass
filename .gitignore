@@ -3,7 +3,6 @@
 **/*.out
 **/*.pdf
 **/*.synctex.gz
-**/pic/
 _minted-*/
 **/.DS_Store
 **/__latexindent_temp.tex
