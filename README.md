@@ -22,9 +22,18 @@
 
 上述的两个供参考的存放位置是`~/.fonts`和`/usr/share/fonts/WHATEVER_YOU_WANT`。
 
+特别地，如果您是WSL用户，可以考虑直接使用Windows中已经安装的字体，而不是复制一份到Linux中。具体地，您可以用管理员权限修改`/etc/fonts/local.conf`为：
+```
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+    <dir>/mnt/c/Windows/Fonts</dir>
+</fontconfig>
+```
+
 ### 英文字体
 
-我们使用了Linux Libertine和TeX Gyre Cursor作为默认的英文字体。
+我们使用了Linux Libertine作为默认的英文衬线和无衬线字体。
 如果您的LaTeX发行版没有正确地被安装，那么可能会找不到这些字体。
 
 如果您是从TeX Live 2019的安装镜像中进行安装的，并且发现真的找不到这些字体，这说明您确实没有正确地安装它。可以参考[System font configuration for XeTEX and LuaTEX](http://www.tug.org/texlive/doc/texlive-en/texlive-en.html#x1-340003.4.4)解决。
@@ -40,20 +49,20 @@ sudo fc-cache -fsv
 
 我们使用[minted宏包](https://github.com/gpoore/minted)来作为插入高亮的代码块。而minted依赖Pygments，其安装方法可以参考[minted的手册](https://github.com/gpoore/minted/blob/master/source/minted.pdf)。或者如果您不愿查手册的话：
 ```
-sudo pip3 install Pygments
+pip install Pygments
 ```
 大概能work。
 
-如果没有安装`pip3`并且您正在使用`apt`作为包管理工具的话，可以使用
+如果没有安装`pip`并且您正在使用`apt`作为包管理工具的话，可以使用
 ```
 sudo apt install python3-pip
 ```
 来安装。
 
-如果`pip3`下载速度过于缓慢，可以参考[这里](https://mirrors.ustc.edu.cn/help/pypi.html)提供的方法把源切换到国内的镜像：
+如果`pip`下载速度过于缓慢，可以参考[这里](https://mirrors.ustc.edu.cn/help/pypi.html)提供的方法把源切换到国内的镜像：
 ```
-pip3 install -i https://mirrors.ustc.edu.cn/pypi/web/simple pip -U
-pip3 config set global.index-url https://mirrors.ustc.edu.cn/pypi/web/simple
+pip install -i https://mirrors.ustc.edu.cn/pypi/web/simple pip -U
+pip config set global.index-url https://mirrors.ustc.edu.cn/pypi/web/simple
 ```
 
 需要注意，在使用minted宏包之后，XeLaTeX的编译参数需要加上`-shell-escape`。
@@ -72,32 +81,17 @@ pip3 config set global.index-url https://mirrors.ustc.edu.cn/pypi/web/simple
 ### latexindent的perl的依赖
 
 如果您刚刚通过上面的指令解决了找不到字体的问题，您的latexindent八成也跑不动。
-您可以参考[这篇文章](https://zhuanlan.zhihu.com/p/50044410)来解决。
-或者执行下面几条指令：
+您可以参考[latexindent的文档](https://mirror.easyname.at/ctan/support/latexindent/documentation/latexindent.pdf)来安装这些依赖。
+
 ```
-sudo cpan
-install Log::Log4perl
-install Log::Dispatch::File
-install YAML::Tiny
-install File::HomeDir
-install Unicode::GCString
+sudo apt install perl
+sudo cpan -i App::cpanminus
+sudo cpanm YAML::Tiny
+sudo cpanm File::HomeDir
+sudo cpanm Unicode::GCString
 ```
 
-如果下载速度慢到无法忍受，可以首先运行`cpan`：
-```
-sudo cpan
-```
-并让其自动配置尽可能多的选项（大约需要您手动输入`yes`然后回车）。
-然后进入`cpan`的shell，接着用：
-```
-o conf urllist http://mirrors.sohu.com/CPAN
-o conf commit
-```
-把`cpan`的源换成国内的某个镜像。
-
-最后**坐和放宽**，耐心等待所有依赖安装完毕。
-
-macOS用户或许需要特别注意一点：至少，macOS Big Sur中自带的perl似乎不足够完整，以致无法正确地安装前述的依赖。如果你是macOS用户，或许你需要设法搞一个完整的perl来。
+简单说，就是要用`cpanm`而不是`cpan`作为perl的包管理器。
 
 ### LaTeX入门
 如果其实您根本就不懂如何使用LaTeX，我们强烈推荐您通过阅读[lshort-zh-cn](https://github.com/CTeX-org/lshort-zh-cn/releases)来入门。
