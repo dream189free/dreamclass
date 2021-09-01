@@ -93,5 +93,28 @@ sudo cpanm Unicode::GCString
 
 简单说，就是要用`cpanm`而不是`cpan`作为perl的包管理器。
 
+如果您是macOS用户并且在安装`Unicode::GCString`时遇到问题，可以参考下面的博文（[原始链接](https://zzi.io/?cat=15)已无法访问）：
+
+> 注意如果 perl 是 brew 安装的，每次 perl 升级后，会需要重新来一次。
+>
+> 根据 Homebrew 的说法，default non-brewed cpan modules are installed to the Cellar. If you wish
+> for your modules to persist across updates we recommend using `local::lib`.
+>
+> 为了避免麻烦，可以
+> ```
+> PERL_MM_OPT="INSTALL_BASE=$HOME/perl5" cpan local::lib
+> echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"' >> ~/.bash_profile
+> ```
+> 由于 CPAN 的系统过于老旧，用 CPAN 管理包非常麻烦且复杂，报错也经常难以搞清楚问题，推荐换成 cpanminus。
+>
+> 关于 Unicode::GCString 和 LineBreak 编译失败
+> 另一个问题是，在 macOS 下，Unicode-LineBreak-2019.001 有可能无法成功编译。查看 log ，可以发现在编译 sombok / libsombok.a 后，链接时出现问题
+> ```
+> cc  -mmacosx-version-min=10.13 -bundle -undefined dynamic_lookup -L/usr/local/lib -fstack-protector-strong  LineBreak.o  -o blib/arch/auto/Unicode/LineBreak/LineBreak.bundle sombok/libsombok.a
+>
+> ld: warning: ignoring file sombok/libsombok.a, file was built for archive which is not the architecture being linked (x86_64): sombok/libsombok.a
+> ```
+> 这个问题早年做过 iOS 开发的人都很熟悉，选错 device 和 simulator 的话经常看见类似 file was built for x86_64 which is not the architecture being linked 的错误。。所以说明 sombok 的编译一定是在某处出了问题，排查一下即可发现是安装了 GNU binutils 中的 ar 与 macOS 的 BSD ar 冲突搞的鬼，暂时将其卸载即可。
+
 ### LaTeX入门
 如果其实您根本就不懂如何使用LaTeX，我们强烈推荐您通过阅读[lshort-zh-cn](https://github.com/CTeX-org/lshort-zh-cn/releases)来入门。
