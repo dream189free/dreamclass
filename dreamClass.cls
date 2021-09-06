@@ -41,36 +41,11 @@
     bottom = 2.54cm,
     left = 3.18cm,
     right = 3.18cm
-    % MS Word的中等页边距
-    % top = 2.54cm,
-    % bottom = 2.54cm,
-    % left = 1.91cm,
-    % right = 1.91cm
 }
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 英文字体
 %%%%%%%%%%%%%%%%%%%%%%
-
-% 参考下述内容设置
-% 对于不了解字体的人，在使用LaTeX排版时如何通过fontspec包选择字体？ - Clerk Ma的回答 - 知乎
-% https://www.zhihu.com/question/20563044/answer/15494226
-
-% \setmainfont[Scale=1.05]{LinLibertine_DR.otf}[
-%     BoldFont = LinLibertine_RZ.otf,
-%     ItalicFont = LinLibertine_RI.otf,
-%     BoldItalicFont = LinLibertine_RZI.otf,
-% ]
-% \setsansfont{LinBiolinum_R.otf}[
-%     BoldFont = LinBiolinum_RB.otf,
-%     ItalicFont = LinBiolinum_RI.otf,
-%     BoldItalicFont = LinBiolinum_RBO.otf
-% ]
-% \setmonofont[Scale=.9]{Sarasa-Mono-Slab-SC-Light}[
-%     BoldFont = Sarasa-Mono-Slab-SC-Regular,
-%     ItalicFont = Sarasa-Mono-Slab-SC-Light-Italic,
-%     BoldItalicFont = Sarasa-Mono-Slab-SC-Italic,
-% ]
 
 \setromanfont[Scale=1.04]{LibertinusSerif}[
    UprightFont = *-Regular,
@@ -104,15 +79,21 @@
 %%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{amsthm}
+
 \theoremstyle{plain}
-\newtheorem{theorem}{\protect\theoremname}
-\newtheorem{lemma}[theorem]{\protect\lemmaname}
-\providecommand{\lemmaname}{引理}
-\providecommand{\theoremname}{定理}
-\newtheorem{problem}{问题}
-\newtheorem*{problem*}{问题}
-\newtheorem{exercise}{习题}
-\newtheorem*{exercise*}{习题}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}{引理}[section]
+\newtheorem{proposition}{命题}[section]
+\newtheorem{corollary}{推论}[section]
+
+\theoremstyle{definition}
+\newtheorem{problem}{问题}[section]
+\newtheorem{exercise}{练习}[section]
+\newtheorem{definition}{定义}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}{评论}[section]
+\newtheorem{note}{注记}[section]
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 算法（algorithm2e）
@@ -166,7 +147,7 @@
 \RequirePackage{multirow}
 
 %%%%%%%%%%%%%%%%%%%%%%
-% 说明文字、代码（minted）和浮动体
+% 说明文字、代码和浮动体
 %%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage[section]{placeins}
@@ -213,7 +194,6 @@
 \newenvironment{codeblock}{\captionsetup{type=listing}}{}
 \SetupFloatingEnvironment{listing}{name=代码}
 \SetupFloatingEnvironment{listing}{listname=代码列表}
-\providecommand*{\listingautorefname}{代码}
 
 \DeclareCaptionFont{heitibf}{\bf\heiti}
 \DeclareCaptionFont{heiti}{\heiti}
@@ -222,34 +202,74 @@
 \captionsetup[figure]{position=below,textfont=heiti,labelfont=heitibf}
 \captionsetup[listing]{position=below,textfont=heiti,labelfont=heitibf}
 
-\renewcommand{\figurename}{图}
-\renewcommand{\tablename}{表}
-\renewcommand{\equationautorefname}{式}
-\renewcommand{\footnoteautorefname}{脚注}
-\renewcommand{\itemautorefname}{项}
-\renewcommand{\figureautorefname}{图}
-\renewcommand{\tableautorefname}{表}
-\renewcommand{\partautorefname}{篇}
-\renewcommand{\appendixautorefname}{附录}
-\renewcommand{\chapterautorefname}{章}
-\renewcommand{\sectionautorefname}{节}
-\renewcommand{\subsectionautorefname}{小节}
-\renewcommand{\subsubsectionautorefname}{小小节}
-\renewcommand{\paragraphautorefname}{段落}
-\renewcommand{\subparagraphautorefname}{子段落}
-\renewcommand{\FancyVerbLineautorefname}{行}
-\renewcommand{\theoremautorefname}{定理}
-\renewcommand{\algorithmautorefname}{算法}
+%%%%%%%%%%%%%%%%%%%%%%
+% 绘图
+%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{tikz}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 参考文献
 %%%%%%%%%%%%%%%%%%%%%%
-
 \RequirePackage{gbt7714}
 
+%%%%%%%%%%%%%%%%%%%%%%
+% 交叉引用
+%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage[nameinlink]{cleveref}
 
-\newcommand{\refc}[1]{第 \ref{#1} 章}
-\newcommand{\refs}[1]{第 \ref{#1} 节}
-\newcommand{\refl}[1]{第 \ref{#1} 行}
+\crefname{figure}{图}{图}
+\crefname{table}{表}{表}
+\crefname{equation}{式}{式}
+\crefname{footnote}{脚注}{脚注}
+\crefname{item}{项}{项}
+\crefname{figure}{图}{图}
+\crefname{table}{表}{表}
+\crefname{part}{篇}{篇}
+\crefname{appendix}{附录}{附录}
+\crefname{chapter}{章}{章}
+\crefname{section}{节}{节}
+\crefname{paragraph}{段落}{段落}
+\crefname{subparagraph}{子段落}{子段落}
+\crefname{page}{页}{页}
 
-\RequirePackage{tikz}
+\crefformat{chapter}{#2第\zhnumber{#1}章#3}
+\crefformat{section}{#2第#1节#3}
+\crefformat{subsection}{#2第#1节#3}
+\crefformat{subsubsection}{#2第#1节#3}
+\crefrangeformat{chapter}{#3第\zhnumber{#1}章#4至#5第#2章#6}
+\crefrangeformat{section}{#3第#1节#4至#5第#2节#6}
+\crefrangeformat{subsection}{#3第#1节#4至#5第#2节#6}
+\crefrangeformat{subsubsection}{#3第#1节#4至#5第#2节#6}
+\crefmultiformat{chapter}{#2第\zhnumber{#1}章#3}{和#2第\zhnumber{#1}章#3}{，#2第\zhnumber{#1}章#3}{和#2第\zhnumber{#1}章#3}
+\crefmultiformat{section}{#2第#1节#3}{和#2第#1节#3}{，#2第#1节#3}{和#2第#1节#3}
+\crefmultiformat{subsection}{#2第#1节#3}{和#2第#1节#3}{，#2第#1节#3}{和#2第#1节#3}
+\crefmultiformat{subsubsection}{#2第#1节#3}{和#2第#1节#3}{，#2第#1节#3}{和#2第#1节#3}
+\newcommand{\crefpairconjunction}{~和~}
+\newcommand{\crefmiddleconjunction}{, }
+\newcommand{\creflastconjunction}{~和~}
+\newcommand{\crefpairgroupconjunction}{~和~}
+\newcommand{\crefmiddlegroupconjunction}{, }
+\newcommand{\creflastgroupconjunction}{~和~}
+\newcommand{\crefrangeconjunction}{~至~}
+
+\crefname{algorithm}{算法}{算法}
+\crefname{AlgoLine}{行}{行}
+\crefname{line}{行}{行}
+\crefname{FancyVerbLine}{行}{行}
+\crefname{codeblock}{代码}{代码}
+\crefname{listing}{代码}{代码}
+
+\crefname{theorem}{定理}{定理}
+\crefname{lemma}{引理}{引理}
+\crefname{proposition}{命题}{命题}
+\crefname{corollary}{推论}{推论}
+\crefname{problem}{问题}{问题}
+\crefname{exercise}{练习}{练习}
+\crefname{definition}{定义}{定义}
+\crefname{remark}{评论}{评论}
+\crefname{note}{注记}{注记}
+
+\makeatletter
+\let\oldcref\cref
+\renewcommand{\cref}[1]{\oldcref{#1}~}
+\makeatother

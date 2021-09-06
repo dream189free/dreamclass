@@ -19,16 +19,16 @@
 \maketitle
 \thispagestyle{empty}
 
-\section{插图}
-\subsection{一张插图}
-\autoref{pic:desktop}是一幅插图。
+\section{插图}\label{sec:1}
+\subsection{一张插图}\label{sec:2}
+\cref{pic:desktop}是一幅插图。\cref{sec:1,sec:2}是两节。
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.5\textwidth]{screenshot.jpg}
     \caption{一张截图}\label{pic:desktop}
 \end{figure}
 \subsection{并排摆放的插图}
-\autoref{pic:flag}是\(2 \times 2\) 摆放的四张图片。
+\cref{pic:flag}是\(2 \times 2\) 摆放的四张图片。
 \begin{figure}
     \centering
     \begin{subfigure}{.5\textwidth}
@@ -55,7 +55,7 @@
     \caption{相机拍摄的FLIF格式的图片在不同位置截断后的效果\label{pic:flag}}
 \end{figure}
 
-\autoref{tbl:1}是一个\texttt{subtable}的示例，得到\autoref{tbl:1-1}和\autoref{tbl:1-2}。
+\cref{tbl:1}是一个\texttt{subtable}的示例，得到\cref{tbl:1-1}和\cref{tbl:1-2}。
 \begin{table}
     \caption{修正后的$\kappa_t$数据记录表}\label{tbl:1}
     \begin{subtable}{0.45\textwidth}
@@ -107,11 +107,11 @@
     \includegraphics[width=.28\textwidth]{screenshot.jpg}
     \caption{双管式电导池示意图}\label{pic:wow}
 \end{wrapfigure}
-DDS—11A(T)型电导率仪（附DIS型铂黑电极）1台；计时器1只；恒温槽1套；双管式电导池2只（见\autoref{pic:wow}）；胖肚移液管（25mL）3支；烧杯（50mL）1只；容量瓶（250mL）一只；称量瓶（Φ25mm×23mm）1只。
+DDS—11A(T)型电导率仪（附DIS型铂黑电极）1台；计时器1只；恒温槽1套；双管式电导池2只（见\cref{pic:wow}）；胖肚移液管（25mL）3支；烧杯（50mL）1只；容量瓶（250mL）一只；称量瓶（Φ25mm×23mm）1只。
 
 \section{代码}
 \subsection{作为浮动体}
-\autoref{code:junk}是作为浮动体的代码块：
+\cref{code:junk}是作为浮动体的代码块：
 \begin{listing}
     \caption{凑字数用的代码\label{code:junk}}
     \begin{minted}{cpp}
@@ -119,7 +119,7 @@ DDS—11A(T)型电导率仪（附DIS型铂黑电极）1台；计时器1只；恒
     \end{minted}
 \end{listing}
 \subsection{不作为浮动体}
-\autoref{code:junk-again}是并非浮动体的代码块：
+\cref{code:junk-again}是并非浮动体的代码块：
 \begin{codeblock}
     \caption{复读机\label{code:junk-again}}
     \begin{minted}{cpp}
@@ -129,7 +129,7 @@ DDS—11A(T)型电导率仪（附DIS型铂黑电极）1台；计时器1只；恒
 \subsection{行内代码}
 这是行内的代码片段：\mintinline{cpp}{wstring price = L"九磅十五便士"}。
 \subsection{插入文件作为代码}
-\autoref{code:engine}是使用文件作为代码块的内容：
+\cref{code:engine}是使用文件作为代码块的内容：
 \begin{codeblock}
     \caption{\texttt{Engine.hpp}的内容\label{code:engine}}
     \inputminted{cpp}{code/test.cpp}
@@ -154,6 +154,12 @@ DDS—11A(T)型电导率仪（附DIS型铂黑电极）1台；计时器1只；恒
         \end{array}
     \end{aligned}
 \]
+
+\begin{equation}\label{eq:1}
+    E = mc^2
+\end{equation}
+\cref{eq:1}看起来就很厉害的样子。
+
 \subsection{行内公式}
 考虑\(\mathbf{H}_{i j}=\frac{\partial^{2} f}{\partial x_{i} \partial x_{j}}\)。
 又\(\operatorname{Pr}(X \geq 10^3 + 2000 | X \geq 2000) = \operatorname{Pr}(X \geq 10^3)\)，
@@ -166,20 +172,36 @@ DDS—11A(T)型电导率仪（附DIS型铂黑电极）1台；计时器1只；恒
 
 本证明受\href{https://datawhalechina.github.io/pumpkin-book/#/chapter2/chapter2?id=221}{这个网页}启发。
 
+\section{定理}
+\begin{theorem}\label{thm:1}
+    喵喵喵
+\end{theorem}
+
+首先证明\cref{lemma:1}。
+\begin{lemma}\label{lemma:1}
+    喵
+\end{lemma}
+
+下面证明\cref{thm:1}：
+\begin{proof}
+    喵喵喵喵喵喵喵
+\end{proof}
+
+
 \section{算法}
-\subsubsection*{习题13.1}
-\begin{problem*}
+\begin{problem}（习题13.1）
     修改Floyd-Warshall算法，使其在给出所有点对之间的最短距离的同时，分别给出所有点对之间的：
     \begin{enumerate}
-        \item \textbf{\kaishu 后继路由表}，定义为矩阵\texttt{GO}。\texttt{GO[i][j] = k}，表示从\texttt{i}到\texttt{j}的下一跳为\texttt{k}。
-        \item \textbf{\kaishu 前驱路由表}，定义为矩阵\texttt{FROM}。\texttt{FROM[i][j] = k}，表示从\texttt{i}到\texttt{j}的最后一跳为\texttt{k}。
+        \item \emph{后继路由表}，定义为矩阵\texttt{GO}。\texttt{GO[i][j] = k}，表示从\texttt{i}到\texttt{j}的下一跳为\texttt{k}。
+        \item \emph{前驱路由表}，定义为矩阵\texttt{FROM}。\texttt{FROM[i][j] = k}，表示从\texttt{i}到\texttt{j}的最后一跳为\texttt{k}。
     \end{enumerate}
-\end{problem*}
+\end{problem}
+
 \subparagraph*{第1问}
 注意到，在Floyd-Warshall算法的进行途中，
 矩阵\texttt{D}中始终存放着当前的子问题下的最短路径，最终结束时子问题的最短路径则变为原问题的最短路径。
 所以我们应当在\texttt{D}被更新的时候同时更新路由表。
-算法如算法\ref{alg:floyd-route-1}所示。
+算法如\cref{alg:floyd-route-1}所示。
 
 \begin{algorithm}
     \caption{给出后继路由表的Floyd-Warshall算法}\label{alg:floyd-route-1}
@@ -203,13 +225,13 @@ DDS—11A(T)型电导率仪（附DIS型铂黑电极）1台；计时器1只；恒
     }
 \end{algorithm}
 \subparagraph*{第2问}
-如果要求前驱路由表而不是后继，我们只需简单地把算法\ref{alg:floyd-route-1}的行\ref{algline:floyd-route-init}改成
+如果要求前驱路由表而不是后继，我们只需简单地把\cref{alg:floyd-route-1}的\cref{algline:floyd-route-init}改成
 \begin{codeblock}
     \begin{minted}[linenos=false]{cpp}
         GO[i][j] = i
     \end{minted}
 \end{codeblock}
-再把行\ref{algline:floyd-route-proceed}改为
+再把\cref{algline:floyd-route-proceed}改为
 \begin{codeblock}
     \begin{minted}[linenos=false]{cpp}
         GO[i][j] = GO[k][j]
