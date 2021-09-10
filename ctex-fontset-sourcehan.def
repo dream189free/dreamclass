@@ -27,100 +27,41 @@
 %% ------------------------------------------------------------------------------
 %%
 \GetIdInfo$Id: ctex.dtx 735dfe2 2019-05-29 21:42:29 +0800 Qing Lee <sobenlee@gmail.com> $
-  {Source Han fonts definition (CTEX)}
+{Source Han fonts definition (CTEX)}
 \ProvidesExplFile{ctex-fontset-sourcehan.def}
-  {\ExplFileDate}{2.4.16}{\ExplFileDescription}
-\sys_if_engine_pdftex:TF
-  {
-    \sys_if_output_pdf:TF
-      { \ctex_fontset_error:n { sourcehan } }
-      {
-        \ctex_zhmap_case:nnn
-          {
-            \setCJKmainfont
-              [
-                      cmap = UniGB-UTF16-H ,
-                  BoldFont = SourceHanSerifCN-Medium.otf ,
-                ItalicFont = FZXKTK.ttf
-              ] { SourceHanSerifCN-Light.otf }
-            \setCJKsansfont
-              [       cmap = UniGB-UTF16-H ，
-                  BoldFont = SourceHanSansCN-Medium.otf
-              ] { SourceHanSansCN-Light.otf }
-            \setCJKmonofont [ cmap = UniGB-UTF16-H ] { sarasa-mono-slab-sc-light.ttf }
-            \setCJKfamilyfont { zhsong }
-              [       cmap = UniGB-UTF16-H ，
-                  BoldFont = SourceHanSerifCN-Medium.otf
-              ] { SourceHanSerifCN-Light.otf }
-            \setCJKfamilyfont { zhhei }
-              [       cmap = UniGB-UTF16-H ，
-                  BoldFont = SourceHanSansCN-Medium.otf
-              ] { SourceHanSansCN-Light.otf }
-            \setCJKfamilyfont { zhkai }
-              [
-                      cmap = UniGB-UTF16-H ,
-                  BoldFont = FZShengSKSJW_Cu.ttf
-              ] { FZXKTK.ttf }
-            \setCJKfamilyfont { zhfs }
-              [ cmap = UniGB-UTF16-H ] { sarasa-mono-slab-sc-light.ttf }
-            \ctex_punct_set:n { sourcehan }
-            \ctex_punct_map_family:nn { \CJKrmdefault } { zhsong }
-            \ctex_punct_map_family:nn { \CJKsfdefault } { zhhei }
-            \ctex_punct_map_family:nn { \CJKttdefault } { zhfs }
-            \ctex_punct_map_itshape:nn { \CJKrmdefault } { zhkai }
-            \ctex_punct_map_bfseries:nn { \CJKrmdefault } { zhhei }
-            \ctex_punct_map_bfseries:nn { \CJKrmdefault , zhsong } { zhsongb }
-            \ctex_punct_map_bfseries:nn { \CJKsfdefault , zhhei } { zhheib }
-          }
-          {
-            \ctex_load_zhmap:nnnn { rm } { zhhei } { zhfs } { zhadobefonts }
-            \ctex_punct_set:n { sourcehan }
-            \ctex_punct_map_family:nn { \CJKrmdefault } { zhsong }
-            \ctex_punct_map_bfseries:nn { \CJKrmdefault } { zhhei }
-            \ctex_punct_map_itshape:nn { \CJKrmdefault } { zhkai }
-          }
-          { \ctex_fontset_error:n { sourcehan } }
-      }
-  }
-  {
-    \sys_if_engine_uptex:TF
-      {
-        \ctex_set_upfonts:nnnnnnn
-          {SourceHanSerifCN-Light.otf} {SourceHanSerifCN-Medium.otf}
-          {FZXKTK.ttf} {FZShengSKSJW_Cu.ttf}
-          {SourceHanSansCN-Light.otf} {SourceHanSansCN-Medium.otf}
-          {sarasa-mono-slab-sc-light.ttf}
-        \ctex_set_upfamily:nnn { zhsong } { upzhserif } { upzhserifb }
-        \ctex_set_upfamily:nnn { zhhei } { upzhsans } { upzhsansb }
-        \ctex_set_upfamily:nnn { zhfs } { upzhmono } {}
-        \ctex_set_upfamily:nnn { zhkai } { upzhserifit } {}
-      }
-      {
-        \setCJKmainfont
-          [
-            BoldFont = Source~Han~Serif~CN~Medium,
-            ItalicFont = 方正新楷体_GBK,
-            BoldItalicFont = 方正盛世楷书简体_粗
-          ] { Source~Han~Serif~CN~Light }
-        \setCJKsansfont
-          [
-            BoldFont = Source~Han~Sans~CN~Medium,
-            ItalicFont = 方正新楷体_GBK,
-            BoldItalicFont = 方正盛世楷书简体_粗
-          ] { Source~Han~Sans~CN~Light }
-        \setCJKmonofont
-          [
-            BoldFont = 等距更纱黑体~Slab~SC,
-          ] { 等距更纱黑体~Slab~SC~Light }
-        \setCJKfamilyfont { zhsong } { Source~Han~Serif~CN~Light }
-        \setCJKfamilyfont { zhhei }  { Source~Han~Sans~CN~Light }
-        \setCJKfamilyfont { zhfs }   { 等距更纱黑体~Slab~SC~Light }
-        \setCJKfamilyfont { zhkai }
-        [
-            BoldFont = 方正盛世楷书简体_粗
-        ] { 方正新楷体_GBK }
-      }
-  }
+{\ExplFileDate}{2.4.16}{\ExplFileDescription}
+\sys_if_engine_uptex:TF
+{
+  \ctex_fontset_error:n { ctex-fontset-sourcehan }
+}
+{
+  \setCJKmainfont
+  [
+    BoldFont = Source~Han~Serif~CN~SemiBold,
+    ItalicFont = 方正新楷体_GBK,
+    BoldItalicFont = 方正盛世楷书简体_粗
+  ] { Source~Han~Serif~CN~Light }
+  \setCJKsansfont
+  [
+    BoldFont = Source~Han~Sans~CN~Medium,
+    ItalicFont = 方正新楷体_GBK,
+    BoldItalicFont = 方正盛世楷书简体_粗
+  ] { Source~Han~Sans~CN~Light }
+  \setCJKmonofont
+  [
+    Scale=.9,
+    BoldFont = 等距更纱黑体~Slab~SC,
+    ItalicFont = 等距更纱黑体~Slab~SC~Light~Italic,
+    BoldItalicFont = 等距更纱黑体~Slab~SC~Italic
+  ] { 等距更纱黑体~Slab~SC~Light }
+  \setCJKfamilyfont { zhsong } { Source~Han~Serif~CN~Light }
+  \setCJKfamilyfont { zhhei }  { Source~Han~Sans~CN~Light }
+  \setCJKfamilyfont { zhfs }   { 等距更纱黑体~Slab~SC~Light }
+  \setCJKfamilyfont { zhkai }
+  [
+    BoldFont = 方正盛世楷书简体_粗
+  ] { 方正新楷体_GBK }
+}
 \NewDocumentCommand \songti   { } { \CJKfamily { zhsong } }
 \NewDocumentCommand \heiti    { } { \CJKfamily { zhhei } }
 \NewDocumentCommand \fangsong { } { \CJKfamily { zhfs } }
