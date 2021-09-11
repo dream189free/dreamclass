@@ -20,7 +20,6 @@ jobs:
           working_directory: test
           latexmk_use_${{ matrix.latex }}: true
           latexmk_shell_escape: true
-          latexmk_use_xelatex: true
           args: '-bibtex'
 
       - name: Upload PDF
