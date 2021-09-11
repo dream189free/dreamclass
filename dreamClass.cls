@@ -86,12 +86,10 @@
 \newtheorem{proposition}{命题}[section]
 \newtheorem{corollary}{推论}[section]
 
-\theoremstyle{definition}
 \newtheorem{problem}{问题}[section]
 \newtheorem{exercise}{练习}[section]
 \newtheorem{definition}{定义}[section]
 
-\theoremstyle{remark}
 \newtheorem{remark}{评论}[section]
 \newtheorem{note}{注记}[section]
 
@@ -152,8 +150,16 @@
 
 \RequirePackage[section]{placeins}
 \RequirePackage{float}
+
 \RequirePackage[compatibility=false]{caption}
 \RequirePackage{subcaption}
+\DeclareCaptionFont{heitibf}{\bf\heiti}
+\DeclareCaptionFont{heiti}{\heiti}
+\captionsetup{font=small}
+\captionsetup[table]{position=top,textfont=heiti,labelfont=heitibf}
+\captionsetup[figure]{position=below,textfont=heiti,labelfont=heitibf}
+\captionsetup[listing]{position=below,textfont=heiti,labelfont=heitibf}
+
 \RequirePackage{booktabs}
 \RequirePackage[section, newfloat]{minted}
 \RequirePackage{xcolor}
@@ -195,12 +201,7 @@
 \SetupFloatingEnvironment{listing}{name=代码}
 \SetupFloatingEnvironment{listing}{listname=代码列表}
 
-\DeclareCaptionFont{heitibf}{\bf\heiti}
-\DeclareCaptionFont{heiti}{\heiti}
-\captionsetup{font=small}
-\captionsetup[table]{position=top,textfont=heiti,labelfont=heitibf}
-\captionsetup[figure]{position=below,textfont=heiti,labelfont=heitibf}
-\captionsetup[listing]{position=below,textfont=heiti,labelfont=heitibf}
+
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 绘图
