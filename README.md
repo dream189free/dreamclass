@@ -118,5 +118,3 @@ sudo cpanm Unicode::GCString
 
 ### LaTeX入门
 如果其实您根本就不懂如何使用LaTeX，我们强烈推荐您通过阅读[lshort-zh-cn](https://github.com/CTeX-org/lshort-zh-cn/releases)来入门。
-
-test
