@@ -35,45 +35,54 @@
   \ctex_fontset_error:n { ctex-fontset-sourcehan }
 }
 {
+  \msg_redirect_name:nnn {fontspec} {no-script} {info}
   \setCJKmainfont
   [
-    BoldFont = Source~Han~Serif~CN~SemiBold,
-    ItalicFont = 方正新楷体_GBK,
-    BoldItalicFont = 方正盛世楷书简体_粗
-  ] { Source~Han~Serif~CN~Light }
+    BoldFont = SourceHanSerifCN-SemiBold.otf,
+    ItalicFont = FZXKTK.TTF,
+    BoldItalicFont = FZShengSKSJW_Cu.TTF
+  ] { SourceHanSerifCN-Light.otf }
   \setCJKsansfont
   [
-    BoldFont = Source~Han~Sans~CN~Medium,
-    ItalicFont = 方正新楷体_GBK,
-    BoldItalicFont = 方正盛世楷书简体_粗
-  ] { Source~Han~Sans~CN~Light }
+    BoldFont = SourceHanSansCN-Medium.otf,
+    ItalicFont = FZXKTK.TTF,
+    BoldItalicFont = FZShengSKSJW_Cu.TTF
+  ] { SourceHanSansCN-Light.otf }
   \setCJKmonofont
   [
     Scale=.9,
-    BoldFont = 等距更纱黑体~Slab~SC,
-    ItalicFont = 等距更纱黑体~Slab~SC~Light~Italic,
-    BoldItalicFont = 等距更纱黑体~Slab~SC~Italic
-  ] { 等距更纱黑体~Slab~SC~Light }
+    Extension=.ttf,
+    BoldFont = sarasa-mono-slab-sc-regular,
+    ItalicFont = sarasa-mono-slab-sc-lightitalic,
+    BoldItalicFont =sarasa-mono-slab-sc-italic
+  ] { sarasa-mono-slab-sc-light }
 
   \setCJKfamilyfont { zhsong }
   [
-    BoldFont = Source~Han~Serif~CN~SemiBold,
-  ] { Source~Han~Serif~CN~Light }
+    BoldFont = SourceHanSerifCN-SemiBold.otf,
+    ItalicFont = FZXKTK.TTF,
+    BoldItalicFont = FZShengSKSJW_Cu.TTF
+  ] { SourceHanSerifCN-Light.otf }
   \setCJKfamilyfont { zhhei }
   [
-    BoldFont = Source~Han~Sans~CN~Medium,
-  ] { Source~Han~Sans~CN~Light }
+    BoldFont = SourceHanSansCN-Medium.otf,
+    ItalicFont = FZXKTK.TTF,
+    BoldItalicFont = FZShengSKSJW_Cu.TTF
+  ] { SourceHanSansCN-Light.otf }
   \setCJKfamilyfont { zhfs }
   [
     Scale=.9,
-    BoldFont = 等距更纱黑体~Slab~SC,
-    ItalicFont = 等距更纱黑体~Slab~SC~Light~Italic,
-    BoldItalicFont = 等距更纱黑体~Slab~SC~Italic
-  ] { 等距更纱黑体~Slab~SC~Light }
+    Extension=.ttf,
+    BoldFont = sarasa-mono-slab-sc-regular,
+    ItalicFont = sarasa-mono-slab-sc-lightitalic,
+    BoldItalicFont =sarasa-mono-slab-sc-italic
+  ] { sarasa-mono-slab-sc-light }
   \setCJKfamilyfont { zhkai }
   [
-    BoldFont = 方正盛世楷书简体_粗
-  ] { 方正新楷体_GBK }
+    BoldFont = FZShengSKSJW_Cu.TTF,
+    ItalicFont = SourceHanSerifCN-Light.otf,
+    BoldItalicFont = SourceHanSerifCN-SemiBold.otf
+  ] { FZXKTK.TTF }
 }
 
 \NewDocumentCommand \songti   { } { \CJKfamily { zhsong } }

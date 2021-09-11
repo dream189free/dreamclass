@@ -13,8 +13,8 @@
 % sub3section(paragraph的格式改变为section的样子), sub4section(subparagraph的也一起变), NULL
 % linespread = <float>(行距，默认1.3倍)
 % zihao =-4(小四号), 5(五号), false(使用文档类原有设置)
-% fontset = sourcehan(思源), founder(方正)，adobe(奥多比)，windowsnew(中易字体和微软雅黑)等
-\LoadClass[UTF8, fontset = sourcehan, 11pt, sub3section]{ctexart}
+% fontset = dreamclass(dreamclass), founder(方正)，adobe(奥多比)，windowsnew(中易字体和微软雅黑)等
+\LoadClass[UTF8, fontset = dreamclass, 11pt, sub3section]{ctexart}
 % 计数一直到paragraph
 \setcounter{secnumdepth}{4}
 \ctexset{
