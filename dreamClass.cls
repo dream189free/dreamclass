@@ -15,12 +15,9 @@
 % zihao =-4(小四号), 5(五号), false(使用文档类原有设置)
 % fontset = dreamclass(dreamclass), founder(方正)，adobe(奥多比)，windowsnew(中易字体和微软雅黑)等
 \LoadClass[UTF8, fontset = dreamclass, 11pt, sub3section]{ctexart}
-% 计数一直到paragraph
-\setcounter{secnumdepth}{4}
+% 计数一直到subsubsection
+\setcounter{secnumdepth}{3}
 \ctexset{
-    % 标点处理格式
-    % kaiming(开明式)，别的...算了吧
-    punct = kaiming,
     % 章节标题格式
     % 统统左对齐
     section/format = \Large\bfseries\sffamily\raggedright,
