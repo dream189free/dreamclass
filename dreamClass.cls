@@ -180,9 +180,12 @@
     citecolor=green!50!black
 }
 
-\setminted{autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4, baselinestretch=1, escapeinside=!!}
+\setminted{autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4, baselinestretch=1, mathescape, escapeinside=||}
 
-\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}
+% let code centering and having line number at same time
+\newcommand\mynumberformat{\def\FancyVerbFormatLine##1{{\theFancyVerbLine} ##1}}
+\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}
+{formatcom=\mynumberformat}
 
 % remove colorbox and fcolorbox style from minted
 \makeatletter
@@ -194,7 +197,6 @@
 \xpatchcmd{\mintinline}{\minted@fvset}{\minted@fvset\dontdofcolorbox}{}{}
 \makeatother
 
-\newenvironment{codeblock}{\captionsetup{type=listing}}{}
 \SetupFloatingEnvironment{listing}{name=代码}
 \SetupFloatingEnvironment{listing}{listname=代码列表}
 
@@ -215,6 +217,7 @@
 %%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage[nameinlink]{cleveref}
 
+\crefdefaultlabelformat{#2#1#3\,}
 \crefname{figure}{图}{图}
 \crefname{table}{表}{表}
 \crefname{equation}{式}{式}
@@ -254,8 +257,11 @@
 \crefname{AlgoLine}{行}{行}
 \crefname{line}{行}{行}
 \crefname{FancyVerbLine}{行}{行}
-\crefname{codeblock}{代码}{代码}
 \crefname{listing}{代码}{代码}
+
+\crefformat{AlgoLine}{#2第#1行#3}
+\crefformat{line}{#2第#1行#3}
+\crefformat{FancyVerbLine}{#2第#1行#3}
 
 \crefname{theorem}{定理}{定理}
 \crefname{lemma}{引理}{引理}
@@ -266,8 +272,3 @@
 \crefname{definition}{定义}{定义}
 \crefname{remark}{评论}{评论}
 \crefname{note}{注记}{注记}
-
-\makeatletter
-\let\oldcref\cref
-\renewcommand{\cref}[1]{\oldcref{#1}~}
-\makeatother
