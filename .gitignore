@@ -6,3 +6,5 @@
 _minted-*/
 **/.DS_Store
 **/__latexindent_temp.tex
+**/*.fdb_latexmk
+**/*.fls
