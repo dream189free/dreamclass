@@ -11,13 +11,11 @@
 本项目使用了下面列出的中文字体。如果您不喜欢，请在[CTeX](http://mirrors.ctan.org/language/chinese/ctex/ctex.pdf)的宏包选项中修改`fontset = sourcehan`以避免使用`ctex-fontset-sourcehan.def`所指定的字体。
 
 - `思源黑体`和`思源宋体`
-    - 可以从Adobe[在GitHub上的相关repo](https://github.com/adobe-fonts)来取得这些文件。`思源黑体`更新频繁，提供细粒度的压缩包，方便选取地区限定的字形；`思源宋体`近年未见更新，也只提供了一个打包了**所有**字形的巨大的压缩包。
-    - 本项目使用的是简体中文限定的思源字体。为方便计，你可以直接从TUNA的镜像中得到需要的文件。[这里](https://mirrors.tuna.tsinghua.edu.cn/adobe-fonts/source-han-sans/SubsetOTF/CN/)是思源黑体的链接，[这里](https://mirrors.tuna.tsinghua.edu.cn/adobe-fonts/source-han-serif/SubsetOTF/CN/)是思源宋体的。
+    - 本项目使用的是简体中文字形的思源字体。为方便计，你可以直接从NJU的镜像中得到需要的文件。[这里](https://mirror.nju.edu.cn/adobe-fonts/source-han-sans/OTF/SimplifiedChinese/)是思源黑体的链接，[这里](https://mirror.nju.edu.cn/adobe-fonts/source-han-serif/OTF/SimplifiedChinese/)是思源宋体的。
 - `方正新楷体`、`方正盛世楷书简体_粗`和`方正仿宋`
     - 可以在[方正字库](https://www.foundertype.com/)上下载。个人非商用似乎并不收钱。
 - `等距更纱黑体`
-  - 似乎是唯一中英文按照2:1的比例严格对齐的等宽字体。
-  - 可以在[e5invis的GitHub repo](https://github.com/be5invis/Sarasa-Gothic)里下载字体，请下载ttf版本，并且特别注意下载完成后不要直接全部解压——否则会得到**非常多**的字体；网络条件不好的话也可以从[TUNA的镜像](https://mirrors.tuna.tsinghua.edu.cn/github-release/be5invis/Sarasa-Gothic/LatestRelease/sarasa-gothic-ttf-0.32.3.7z)下载。
+  - 可以在[e5invis的GitHub repo](https://github.com/be5invis/Sarasa-Gothic)里下载字体，请下载ttf版本，并且特别注意下载完成后不要直接全部解压——否则会得到**非常多**的字体；网络条件不好的话也可以从[NJU的镜像](https://mirror.nju.edu.cn/github-release/be5invis/Sarasa-Gothic/LatestRelease/)下载。
   - 本项目使用的是`sarasa-mono-slab-sc-*.ttf`，字体名称是`等距更纱黑体 Slab SC`。
 
 上述的两个供参考的存放位置是`~/.fonts`和`/usr/share/fonts/WHATEVER_YOU_WANT`。

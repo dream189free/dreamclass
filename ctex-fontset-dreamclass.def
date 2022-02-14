@@ -35,16 +35,16 @@
   {
     \setCJKmainfont
     [
-      BoldFont = SourceHanSerifCN-SemiBold.otf,
+      BoldFont = SourceHanSerifSC-SemiBold.otf,
       ItalicFont = FZXKTK.TTF,
       BoldItalicFont = FZShengSKSJW_Cu.TTF
-    ] { SourceHanSerifCN-Light.otf }
+    ] { SourceHanSerifSC-Light.otf }
     \setCJKsansfont
     [
-      BoldFont = SourceHanSansCN-Medium.otf,
+      BoldFont = SourceHanSansSC-Medium.otf,
       ItalicFont = FZXKTK.TTF,
       BoldItalicFont = FZShengSKSJW_Cu.TTF
-    ] { SourceHanSansCN-Light.otf }
+    ] { SourceHanSansSC-Light.otf }
     \setCJKmonofont
     [
       Scale=.9,
@@ -55,21 +55,21 @@
     ] { sarasa-mono-slab-sc-light }
     \setCJKfamilyfont { zhsong }
     [
-      BoldFont = SourceHanSerifCN-SemiBold.otf,
+      BoldFont = SourceHanSerifSC-SemiBold.otf,
       ItalicFont = FZXKTK.TTF,
       BoldItalicFont = FZShengSKSJW_Cu.TTF
-    ] { SourceHanSerifCN-Light.otf }
+    ] { SourceHanSerifSC-Light.otf }
     \setCJKfamilyfont { zhhei }
     [
-      BoldFont = SourceHanSansCN-Medium.otf,
+      BoldFont = SourceHanSansSC-Medium.otf,
       ItalicFont = FZXKTK.TTF,
       BoldItalicFont = FZShengSKSJW_Cu.TTF
-    ] { SourceHanSansCN-Light.otf }
+    ] { SourceHanSansSC-Light.otf }
     \setCJKfamilyfont { zhkai }
     [
       BoldFont = FZShengSKSJW_Cu.TTF,
-      ItalicFont = SourceHanSerifCN-Light.otf,
-      BoldItalicFont = SourceHanSerifCN-SemiBold.otf
+      ItalicFont = SourceHanSerifSC-Light.otf,
+      BoldItalicFont = SourceHanSerifSC-SemiBold.otf
     ] { FZXKTK.TTF }
     \setCJKfamilyfont { zhfs }
     [
@@ -98,9 +98,9 @@
   { \ctex_fontset_error:n { dreamclass } }
 }
 {
-  \ctex_set_upmap_unicode:nnn { upserif   } { SourceHanSerifCN-Light.otf    } { SourceHanSerifCN-SemiBold.otf   }
+  \ctex_set_upmap_unicode:nnn { upserif   } { SourceHanSerifSC-Light.otf    } { SourceHanSerifSC-SemiBold.otf   }
   \ctex_set_upmap:nnn         { upserifit } { FZXKTK.TTF                    } { FZShengSKSJW_Cu.TTF             }
-  \ctex_set_upmap_unicode:nnn { upsans    } { SourceHanSansCN-Light.otf     } { SourceHanSansCN-Medium.otf      }
+  \ctex_set_upmap_unicode:nnn { upsans    } { SourceHanSansSC-Light.otf     } { SourceHanSansSC-Medium.otf      }
   \ctex_set_upmap_unicode:nnn { upmono    } { sarasa-mono-slab-sc-light.ttf } { sarasa-mono-slab-sc-regular.ttf }
   \ctex_set_upfamily:nnn { zhsong } { upzhserif   } { upzhserifb   }
   \ctex_set_upfamily:nnn { zhhei  } { upzhsans    } { upzhsansb    }
@@ -109,16 +109,16 @@
 {
   \setCJKmainfont
   [
-    BoldFont = Source~Han~Serif~CN~SemiBold,
+    BoldFont = Source~Han~Serif~SC~SemiBold,
     ItalicFont = FZNewKai-Z03,
     BoldItalicFont = FZShengShiKaiShuS-B-GB
-  ] { Source~Han~Serif~CN~Light }
+  ] { Source~Han~Serif~SC~Light }
   \setCJKsansfont
   [
-    BoldFont = Source~Han~Sans~CN~Medium,
+    BoldFont = Source~Han~Sans~SC~Medium,
     ItalicFont = FZNewKai-Z03,
     BoldItalicFont = FZShengShiKaiShuS-B-GB
-  ] { Source~Han~Sans~CN~Light }
+  ] { Source~Han~Sans~SC~Light }
   \setCJKmonofont
   [
     Scale=.9,
@@ -128,21 +128,21 @@
   ] { Sarasa~Mono~Slab~SC~Light }
   \setCJKfamilyfont { zhsong }
   [
-    BoldFont = Source~Han~Serif~CN~SemiBold,
+    BoldFont = Source~Han~Serif~SC~SemiBold,
     ItalicFont = FZNewKai-Z03,
     BoldItalicFont = FZShengShiKaiShuS-B-GB
-  ] { Source~Han~Serif~CN~Light }
+  ] { Source~Han~Serif~SC~Light }
   \setCJKfamilyfont { zhhei }
   [
-    BoldFont = Source~Han~Sans~CN~Medium,
+    BoldFont = Source~Han~Sans~SC~Medium,
     ItalicFont = FZNewKai-Z03,
     BoldItalicFont = FZShengShiKaiShuS-B-GB
-  ] { Source~Han~Sans~CN~Light }
+  ] { Source~Han~Sans~SC~Light }
   \setCJKfamilyfont { zhkai }
   [
     BoldFont = FZShengShiKaiShuS-B-GB,
-    ItalicFont = Source~Han~Serif~CN~Light,
-    BoldItalicFont = Source~Han~Serif~CN~SemiBold
+    ItalicFont = Source~Han~Serif~SC~Light,
+    BoldItalicFont = Source~Han~Serif~SC~SemiBold
   ] { FZNewKai-Z03 }
   \setCJKfamilyfont { zhfs }
   [

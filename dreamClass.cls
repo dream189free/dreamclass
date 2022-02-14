@@ -182,11 +182,6 @@
 
 \setminted{autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4, baselinestretch=1, mathescape, escapeinside=||}
 
-% let code centering and having line number at same time
-\newcommand\mynumberformat{\def\FancyVerbFormatLine##1{{\theFancyVerbLine} ##1}}
-\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}
-{formatcom=\mynumberformat}
-
 % remove colorbox and fcolorbox style from minted
 \makeatletter
 \AtBeginEnvironment{minted}{\dontdofcolorbox}
