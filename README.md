@@ -1,4 +1,4 @@
-# latex-template-dreamClass
+# dreamClass
 
 ## 简介
 
@@ -8,7 +8,7 @@
 
 ### 中文字体
 
-本项目使用了下面列出的中文字体。如果您不喜欢，请在[CTeX](http://mirrors.ctan.org/language/chinese/ctex/ctex.pdf)的宏包选项中修改`fontset = sourcehan`以避免使用`ctex-fontset-sourcehan.def`所指定的字体。
+本项目使用了下面列出的中文字体。
 
 - `思源黑体`和`思源宋体`
     - 本项目使用的是简体中文字形的思源字体。为方便计，你可以直接从NJU的镜像中得到需要的文件。[这里](https://mirror.nju.edu.cn/adobe-fonts/source-han-sans/OTF/SimplifiedChinese/)是思源黑体的链接，[这里](https://mirror.nju.edu.cn/adobe-fonts/source-han-serif/OTF/SimplifiedChinese/)是思源宋体的。
@@ -66,7 +66,7 @@ pip config set global.index-url https://mirrors.ustc.edu.cn/pypi/web/simple
 需要注意，在使用minted宏包之后，XeLaTeX的编译参数需要加上`-shell-escape`。
 
 ## 用法
-1. 把`*.cls`和`*.def`丢到当前工作目录或者本地TDS目录树下。
+1. 把`*.cls`丢到当前工作目录或者本地TDS目录树下。
    - 一个供参考的路径是`~/texmf/tex/latex/`。
 2. 在`*.tex`的导言区加上`\documentclass{dreamClass}`。
 

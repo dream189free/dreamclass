@@ -13,8 +13,7 @@
 % sub3section(paragraph的格式改变为section的样子), sub4section(subparagraph的也一起变), NULL
 % linespread = <float>(行距，默认1.3倍)
 % zihao =-4(小四号), 5(五号), false(使用文档类原有设置)
-% fontset = dreamclass(dreamclass), founder(方正)，adobe(奥多比)，windowsnew(中易字体和微软雅黑)等
-\LoadClass[UTF8, fontset = dreamclass, 11pt, sub3section]{ctexart}
+\LoadClass[UTF8, fontset = none, zihao = 5, sub3section]{ctexart}
 % 计数一直到subsubsection
 \setcounter{secnumdepth}{3}
 \ctexset{
@@ -45,23 +44,62 @@
 %%%%%%%%%%%%%%%%%%%%%%
 
 \setromanfont[Scale=1.04]{LibertinusSerif}[
-   UprightFont = *-Regular,
-   BoldFont = *-Bold,
-   ItalicFont = *-Italic,
-   BoldItalicFont = *-BoldItalic,
-   Extension = .otf
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+  Extension = .otf
 ]
-\setsansfont[Scale=1]{LibertinusSans}[
-   UprightFont = *-Regular,
-   BoldFont = *-Bold,
-   ItalicFont = *-Italic,
-   Extension = .otf
+\setsansfont{LibertinusSans}[
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  Extension = .otf
 ]
-\setmonofont[Scale=.9]{Sarasa-Mono-Slab-SC-Light}[
+\setmonofont[Scale=0.9]{sarasa-mono-latin}[
+  UprightFont = sarasa-mono-slab-sc-light,
+  BoldFont = sarasa-mono-slab-sc-regular,
+  ItalicFont = sarasa-mono-slab-sc-lightitalic,
+  BoldItalicFont = sarasa-mono-slab-sc-italic,
+  Extension = .ttf
+]
+
+  \setCJKmainfont{source-han-serif}
+  [
+    UprightFont = Source-Han-Serif-SC-Regular,
+    BoldFont = Source-Han-Serif-SC-Bold,
+    ItalicFont = FZNewKai-Z03,
+    BoldItalicFont = FZShengShiKaiShuS-B-GB
+  ]
+  \setCJKsansfont{source-han-sans}
+  [
+    UprightFont = Source-Han-Sans-SC-Normal,
+    BoldFont = Source-Han-Sans-SC-Medium,
+    ItalicFont = FZNewKai-Z03,
+    BoldItalicFont = FZShengShiKaiShuS-B-GB
+  ]
+  \setCJKmonofont{sarasa-mono}[
+    UprightFont = Sarasa-Mono-Slab-SC-Light,
     BoldFont = Sarasa-Mono-Slab-SC-Regular,
     ItalicFont = Sarasa-Mono-Slab-SC-Light-Italic,
     BoldItalicFont = Sarasa-Mono-Slab-SC-Italic
-]
+  ]
+
+  \setCJKfamilyfont{zhsong}{source-han-serif}
+  \setCJKfamilyfont{zhhei}{source-han-sans}
+  \setCJKfamilyfont{zhkai}{fz-kai}
+  [
+    UprightFont = FZNewKai-Z03,
+    BoldFont = FZShengShiKaiShuS-B-GB,
+    ItalicFont = Source-Han-Serif-SC-Regular,
+    BoldItalicFont = Source-Han-Serif-SC-Bold
+  ]
+  \setCJKfamilyfont{zhfs}{sarasa-mono}
+
+\NewDocumentCommand \songti     { } { \CJKfamily { zhsong  } }
+\NewDocumentCommand \heiti      { } { \CJKfamily { zhhei   } }
+\NewDocumentCommand \kaishu     { } { \CJKfamily { zhkai   } }
+\NewDocumentCommand \fangsong   { } { \CJKfamily { zhfs    } }
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 公式和符号
@@ -84,7 +122,7 @@
 \newtheorem{corollary}{推论}[section]
 
 \newtheorem{problem}{问题}[section]
-\newtheorem{exercise}{练习}[section]
+\newtheorem{exercise}{习题}[section]
 \newtheorem{definition}{定义}[section]
 
 \newtheorem{remark}{评论}[section]
@@ -263,7 +301,7 @@
 \crefname{proposition}{命题}{命题}
 \crefname{corollary}{推论}{推论}
 \crefname{problem}{问题}{问题}
-\crefname{exercise}{练习}{练习}
+\crefname{exercise}{习题}{习题}
 \crefname{definition}{定义}{定义}
 \crefname{remark}{评论}{评论}
 \crefname{note}{注记}{注记}
