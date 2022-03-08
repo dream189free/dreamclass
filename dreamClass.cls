@@ -56,50 +56,73 @@
   ItalicFont = *-Italic,
   Extension = .otf
 ]
-\setmonofont[Scale=0.9]{sarasa-mono-latin}[
-  UprightFont = sarasa-mono-slab-sc-light,
-  BoldFont = sarasa-mono-slab-sc-regular,
-  ItalicFont = sarasa-mono-slab-sc-lightitalic,
-  BoldItalicFont = sarasa-mono-slab-sc-italic,
+\setmonofont[Scale=0.9]{sarasa-mono-slab-sc}[
+  UprightFont = *-light,
+  BoldFont = *-regular,
+  ItalicFont = *-lightitalic,
+  BoldItalicFont = *-italic,
   Extension = .ttf
 ]
 
-  \setCJKmainfont{source-han-serif}
-  [
-    UprightFont = Source-Han-Serif-SC-Regular,
-    BoldFont = Source-Han-Serif-SC-Bold,
-    ItalicFont = FZNewKai-Z03,
-    BoldItalicFont = FZShengShiKaiShuS-B-GB
-  ]
-  \setCJKsansfont{source-han-sans}
-  [
-    UprightFont = Source-Han-Sans-SC-Normal,
-    BoldFont = Source-Han-Sans-SC-Medium,
-    ItalicFont = FZNewKai-Z03,
-    BoldItalicFont = FZShengShiKaiShuS-B-GB
-  ]
-  \setCJKmonofont{sarasa-mono}[
-    UprightFont = Sarasa-Mono-Slab-SC-Light,
-    BoldFont = Sarasa-Mono-Slab-SC-Regular,
-    ItalicFont = Sarasa-Mono-Slab-SC-Light-Italic,
-    BoldItalicFont = Sarasa-Mono-Slab-SC-Italic
-  ]
+%%%%%%%%%%%%%%%%%%%%%%
+% 中文字体
+%%%%%%%%%%%%%%%%%%%%%%
 
-  \setCJKfamilyfont{zhsong}{source-han-serif}
-  \setCJKfamilyfont{zhhei}{source-han-sans}
-  \setCJKfamilyfont{zhkai}{fz-kai}
-  [
-    UprightFont = FZNewKai-Z03,
-    BoldFont = FZShengShiKaiShuS-B-GB,
-    ItalicFont = Source-Han-Serif-SC-Regular,
-    BoldItalicFont = Source-Han-Serif-SC-Bold
-  ]
-  \setCJKfamilyfont{zhfs}{sarasa-mono}
+\setCJKmainfont{SourceHanSerifSC}
+[
+  UprightFont = *-Regular.otf,
+  BoldFont = *-Bold.otf,
+  ItalicFont = FZXKTK.TTF,
+  BoldItalicFont = FZShengSKSJW_Cu.TTF
+]
+\setCJKsansfont{SourceHanSansSC}
+[
+  UprightFont = *-Normal.otf,
+  BoldFont = *-Medium.otf,
+  ItalicFont = FZXKTK.TTF,
+  BoldItalicFont = FZShengSKSJW_Cu.TTF
+]
+\setCJKmonofont{sarasa-mono-slab-sc}[
+  Scale=0.9,
+  UprightFont = *-light,
+  BoldFont = *-regular,
+  ItalicFont = *-lightitalic,
+  BoldItalicFont = *-italic,
+  Extension = .ttf
+]
 
-\NewDocumentCommand \songti     { } { \CJKfamily { zhsong  } }
-\NewDocumentCommand \heiti      { } { \CJKfamily { zhhei   } }
-\NewDocumentCommand \kaishu     { } { \CJKfamily { zhkai   } }
-\NewDocumentCommand \fangsong   { } { \CJKfamily { zhfs    } }
+\setCJKfamilyfont{zhsong}{SourceHanSerifSC}[
+  UprightFont = *-Regular.otf,
+  BoldFont = *-Bold.otf,
+  ItalicFont = FZXKTK.TTF,
+  BoldItalicFont = FZShengSKSJW_Cu.TTF
+]
+\setCJKfamilyfont{zhhei}{SourceHanSansSC}[
+  UprightFont = *-Normal.otf,
+  BoldFont = *-Medium.otf,
+  ItalicFont = FZXKTK.TTF,
+  BoldItalicFont = FZShengSKSJW_Cu.TTF
+]
+\setCJKfamilyfont{zhkai}
+[
+  UprightFont = FZXKTK.TTF,
+  BoldFont = FZShengSKSJW_Cu.TTF,
+  ItalicFont = SourceHanSerifSC-Regular.otf,
+  BoldItalicFont = SourceHanSerifSC-Bold.otf
+]{fz-kai}
+\setCJKfamilyfont{zhfs}{sarasa-mono-slab-sc}[
+  Scale=0.9,
+  UprightFont = *-light,
+  BoldFont = *-regular,
+  ItalicFont = *-lightitalic,
+  BoldItalicFont = *-italic,
+  Extension = .ttf
+]
+
+\NewDocumentCommand \songti     { } {\CJKfamily{zhsong}}
+\NewDocumentCommand \heiti      { } {\CJKfamily{zhhei}}
+\NewDocumentCommand \kaishu     { } {\CJKfamily{zhkai}}
+\NewDocumentCommand \fangsong   { } {\CJKfamily{zhfs}}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 公式和符号
