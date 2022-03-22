@@ -12,7 +12,7 @@
 
 - `思源黑体`和`思源宋体`
     - 本项目使用的是简体中文字形的思源字体。为方便计，你可以直接从NJU的镜像中得到需要的文件。[这里](https://mirror.nju.edu.cn/adobe-fonts/source-han-sans/OTF/SimplifiedChinese/)是思源黑体的链接，[这里](https://mirror.nju.edu.cn/adobe-fonts/source-han-serif/OTF/SimplifiedChinese/)是思源宋体的。
-- `方正新楷体`、`方正盛世楷书简体_粗`和`方正仿宋`
+- `方正新楷体`、`方正粗楷`和`方正仿宋`
     - 可以在[方正字库](https://www.foundertype.com/)上下载。个人非商用似乎并不收钱。
 - `等距更纱黑体`
   - 可以在[e5invis的GitHub repo](https://github.com/be5invis/Sarasa-Gothic)里下载字体，请下载ttf版本，并且特别注意下载完成后不要直接全部解压——否则会得到**非常多**的字体；网络条件不好的话也可以从[NJU的镜像](https://mirror.nju.edu.cn/github-release/be5invis/Sarasa-Gothic/LatestRelease/)下载。
