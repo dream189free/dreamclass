@@ -277,6 +277,7 @@
 \SetupFloatingEnvironment{listing}{name=代码}
 \SetupFloatingEnvironment{listing}{listname=代码列表}
 
+\newcommand{\code}[2][c]{\hspace{-\fontdimen2\font plus -\fontdimen3\font minus -\fontdimen4\font}\mintinline{#1}{#2}\xspace}
 
 
 %%%%%%%%%%%%%%%%%%%%%%
