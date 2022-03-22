@@ -3,51 +3,78 @@
 
 \title{
     \vspace{-50pt}
-    \textbf{\Huge《大数据综合处理》课程设计}\\
-    \textbf{\huge 金庸的江湖}
+    \textbf{\heiti \Huge《大数据综合处理》课程设计}\\
+    \textbf{\heiti \huge 金庸的江湖}
 }
 
 \author[1]{123456789赵志辉\thanks{\href{mailto:zhh.zhao@outlook.com}{zhh.zhao@outlook.com}}}
 \author[1]{123456790张三}
 \author[1]{123456791李四}
-\author[2]{233233233喵喵喵}
+\author[2]{233233233橙子君}
 \affil[1]{计算机科学与技术系，九乡河文理学院}
-\affil[2]{喵喵喵，B612星球}
+\affil[2]{B612星球}
 \date{\today}
 
 \begin{document}
 \maketitle
 \thispagestyle{empty}
 
-\section{插图}\label{sec:1}
+
+\section{字体}
+
+\newcommand{\testtext}{Adobe InDesign、Microsoft Word 等对中文与西文（这里用「西文」来泛指用空格分词的外文）混合排版支持较好的软件，都默认增大汉字和西文的间距。InDesign 的默认设置是 1/4 的全角空格宽度（遵从 JIS），也就是约等于一个半角空格。}
+
+{\rmfamily \testtext \\ \textbf{\testtext} \\ \textit{\testtext} \\}
+
+{\sffamily \testtext \\ \textbf{\testtext} \\ \textit{\testtext} \\}
+
+{\ttfamily \testtext \\ \textbf{\testtext} \\ \textit{\testtext} \\}
+
+\begin{remark}
+    不过绝大多数用\LaTeX{}进行学术论文写作的同学，在新建文件不久之后就会认识到一个关键的事实，有诗云：
+    \begin{enumerate}
+        \item 浮动体遍地乱跑，标签溢出边框
+        \item 多一字\verb+\hbox badness 10000+，少一字文档编译失败
+        \item 看似应有尽有，实际啥都有bug
+    \end{enumerate}
+    甚至于说给文本加下划线这么简单的功能，为了能和lualatex兼容，都要先…再…，其积弊如此。
+
+    当然了！这个时候自然会天降神兵，说，“我来救你！”
+
+    这个救星就是Mircosoft\textsuperscript{\small\textregistered} Word！
+\end{remark}
+
+\section{图表}\label{sec:1}
+
 \subsection{一张插图}\label{sec:2}
-\cref{pic:desktop}是一幅插图。\cref{sec:1,sec:2}是两节。
+\cref{pic:desktop}是一幅插图。
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.5\textwidth]{screenshot.jpg}
     \caption{一张截图}\label{pic:desktop}
 \end{figure}
+
 \subsection{并排摆放的插图}
 \cref{pic:flag}是\(2 \times 2\) 摆放的四张图片。
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.3\textwidth}
         \centering
         \includegraphics[width=\textwidth]{screenshot.jpg}
         \caption{500KB}
     \end{subfigure}%
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.3\textwidth}
         \centering
         \includegraphics[width=\textwidth]{screenshot.jpg}
         \caption{200KB}
     \end{subfigure}
 
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.3\textwidth}
         \centering
         \includegraphics[width=\textwidth]{screenshot.jpg}
         \caption{100KB}
     \end{subfigure}%
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.3\textwidth}
         \centering
         \includegraphics[width=\textwidth]{screenshot.jpg}
         \caption{50KB}
@@ -55,8 +82,18 @@
     \caption{相机拍摄的FLIF格式的图片在不同位置截断后的效果\label{pic:flag}}
 \end{figure}
 
-\cref{tbl:1}是一个\texttt{subtable}的示例，得到\cref{tbl:1-1}和\cref{tbl:1-2}。
+\subsection{环绕式插图}
+\begin{wrapfigure}{r}{.3\textwidth}
+    \centering
+    \includegraphics[width=.28\textwidth]{screenshot.jpg}
+    \caption{双管式电导池示意图}\label{pic:wow}
+\end{wrapfigure}
+DDS—11A(T)型电导率仪（附DIS型铂黑电极）1台；计时器1只；恒温槽1套；双管式电导池2只（见\cref{pic:wow}）；胖肚移液管（25mL）3支；烧杯（50mL）1只；容量瓶（250mL）一只；称量瓶（Φ25mm×23mm）1只。
+
+\subsection{三线表}
+\cref{tbl:1}是一个\texttt{subtable}的示例，其中含有\cref{tbl:1-1}和\cref{tbl:1-2}。
 \begin{table}
+    \zihao{6}
     \caption{修正后的$\kappa_t$数据记录表}\label{tbl:1}
     \begin{subtable}{0.45\textwidth}
         \centering
@@ -101,18 +138,44 @@
         \end{tabular}
     \end{subtable}
 \end{table}
-\subsection{环绕式插图}
-\begin{wrapfigure}{r}{.3\textwidth}
+
+
+\newcommand{\tool}{A\xspace}
+\newcommand{\asan}{B\xspace}
+
+使用\tool 与\asan 对前述程序进行插桩，编译运行，使用\code{-O3}编译选项，
+测得的时间和内存情况如\cref{tbl:phoenix_time}所示。
+\emph{时间}指未经插桩的程序的实际运行时间；\emph{内存}指未经插桩的程序在运行过程中内存占用的峰值；
+两个工具下的\emph{额外时间占比}指引入的额外时间开销和原本的实际运行时间的比值，\emph{额外内存占比}同理。
+
+
+\begin{table}
     \centering
-    \includegraphics[width=.28\textwidth]{screenshot.jpg}
-    \caption{双管式电导池示意图}\label{pic:wow}
-\end{wrapfigure}
-DDS—11A(T)型电导率仪（附DIS型铂黑电极）1台；计时器1只；恒温槽1套；双管式电导池2只（见\cref{pic:wow}）；胖肚移液管（25mL）3支；烧杯（50mL）1只；容量瓶（250mL）一只；称量瓶（Φ25mm×23mm）1只。
+    \zihao{6}
+    \caption{\tool 与\asan 在基准程序下的实验结果}
+    \label{tbl:phoenix_time}
+    \begin{tabular}{ccccccc}
+        \toprule
+        \multirow{2}{*}{实验程序} & \multicolumn{2}{c}{未经插桩} & \multicolumn{2}{c}{\tool } & \multicolumn{2}{c}{\asan }                                  \\
+                                  & 时间（秒）                       & 内存（千字节）                       & 额外时间占比                   & 额外内存占比 & 额外时间占比 & 额外内存占比 \\
+        \midrule
+        \code{string_match}       & 0.17                       & 531976                     & 0.941                      & 0.000    & 0.824    & 0.006    \\
+        \code{pca}                & 1.38                       & 72704                      & 1.435                      & 0.006    & 1.114    & 0.203    \\
+        \code{matrix_multiply}    & 4.93                       & 13960                      & 0.235                      & 0.011    & 0.084    & 0.243    \\
+        \code{liner_regression}   & 0.07                       & 531912                     & 2.429                      & 0.000    & 0.714    & 0.006    \\
+        \code{kmeans}             & 0.89                       & 6600                       & 4.685                      & 0.781    & 2.928    & 1.852    \\
+        \code{histogram}          & 0.36                       & 1375480                    & 6.361                      & 0.000    & 4.625    & 0.002    \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{引用}
+\cref{sec:1,sec:2}是正文的两节。
 
 \section{代码}
 
 \cref{code:junk}是代码块：
-\begin{listing}
+\begin{listing}[H]
     \caption{凑字数用的代码\label{code:junk}}
     \begin{minted}{cpp}
     int main() {}
@@ -132,7 +195,7 @@ DDS—11A(T)型电导率仪（附DIS型铂黑电极）1台；计时器1只；恒
 \end{listing}
 
 \subsection{行内代码}
-这是行内的代码片段：\mintinline{cpp}{wstring price = L"九磅十五便士"}。
+这是行内的代码片段：\code[cpp]{wstring price = L"九磅十五便士"}。
 \subsection{插入文件作为代码}
 \cref{code:engine}是使用文件作为代码块的内容：
 \begin{listing}
@@ -179,17 +242,17 @@ DDS—11A(T)型电导率仪（附DIS型铂黑电极）1台；计时器1只；恒
 
 \section{定理}
 \begin{theorem}\label{thm:1}
-    喵喵喵
+    显见
 \end{theorem}
 
 首先证明\cref{lemma:1}。
 \begin{lemma}\label{lemma:1}
-    喵
+    易得
 \end{lemma}
 
 下面证明\cref{thm:1}：
 \begin{proof}
-    喵喵喵喵喵喵喵
+    留作习题
 \end{proof}
 
 
@@ -197,15 +260,15 @@ DDS—11A(T)型电导率仪（附DIS型铂黑电极）1台；计时器1只；恒
 \begin{problem}（习题13.1）
 修改Floyd-Warshall算法，使其在给出所有点对之间的最短距离的同时，分别给出所有点对之间的：
 \begin{enumerate}
-    \item \emph{后继路由表}，定义为矩阵\texttt{GO}。\texttt{GO[i][j] = k}，表示从\texttt{i}到\texttt{j}的下一跳为\texttt{k}。
-    \item \emph{前驱路由表}，定义为矩阵\texttt{FROM}。\texttt{FROM[i][j] = k}，表示从\texttt{i}到\texttt{j}的最后一跳为\texttt{k}。
+    \item \emph{后继路由表}，定义为矩阵\code{GO}。\code{GO[i][j] = k}，表示从\code{i}到\code{j}的下一跳为\code{k}。
+    \item \emph{前驱路由表}，定义为矩阵\code{FROM}。\code{FROM[i][j] = k}，表示从\code{i}到\code{j}的最后一跳为\code{k}。
 \end{enumerate}
 \end{problem}
 
 \subparagraph*{第1问}
 注意到，在Floyd-Warshall算法的进行途中，
-矩阵\texttt{D}中始终存放着当前的子问题下的最短路径，最终结束时子问题的最短路径则变为原问题的最短路径。
-所以我们应当在\texttt{D}被更新的时候同时更新路由表。
+矩阵\code{D}中始终存放着当前的子问题下的最短路径，最终结束时子问题的最短路径则变为原问题的最短路径。
+所以我们应当在\code{D}被更新的时候同时更新路由表。
 算法如\cref{alg:floyd-route-1}所示。
 
 \begin{algorithm}
@@ -231,52 +294,10 @@ DDS—11A(T)型电导率仪（附DIS型铂黑电极）1台；计时器1只；恒
 \end{algorithm}
 \subparagraph*{第2问}
 如果要求前驱路由表而不是后继，我们只需简单地把\cref{alg:floyd-route-1}的\cref{algline:floyd-route-init}改成
-\begin{listing}[H]
-    \begin{minted}[linenos=false]{cpp}
-        GO[i][j] = i
-    \end{minted}
-\end{listing}
+\code{GO[i][j] = i}
 再把\cref{algline:floyd-route-proceed}改为
-\begin{listing}[H]
-    \begin{minted}[linenos=false]{cpp}
-        GO[i][j] = GO[k][j]
-    \end{minted}
-\end{listing}
+\code{GO[i][j] = GO[k][j]}
 即可。
-这样，\texttt{GO}给出的将是从\texttt{i}到\texttt{j}的最短路径的\emph{最后一跳}。
-
-\section{其他}\label{sec:other}
-\cref{sec:other}是最后一节。
-\subsection{带圆圈的编号列表}
-\begin{enumerate}[label=\large\protect\textcircled{\small\arabic*}]
-    \item 喵
-    \item 呜
-\end{enumerate}
-
-\newcommand{\testtext}{Adobe InDesign、Microsoft Word 等对中文与西文（这里用「西文」来泛指用空格分词的外文）混合排版支持较好的软件，都默认增大汉字和西文的间距。InDesign 的默认设置是 1/4 的全角空格宽度（遵从 JIS），也就是约等于一个半角空格。}
-
-\newpage
-
-{\rmfamily \testtext \\ \textbf{\testtext} \\ \textit{\testtext} \\}
-
-{\sffamily \testtext \\ \textbf{\testtext} \\ \textit{\testtext} \\}
-
-{\ttfamily \testtext \\ \textbf{\testtext} \\ \textit{\testtext} \\}
-
-\newpage
-
-\begin{remark}
-    不过绝大多数用\LaTeX{}进行学术论文写作的同学，在新建文件不久之后就会认识到一个关键的事实，有诗云：
-    \begin{enumerate}
-        \item 浮动体遍地乱跑，标签溢出边框
-        \item 多一字\verb+\hbox badness 10000+，少一字文档编译失败
-        \item 看似应有尽有，实际啥都有bug
-    \end{enumerate}
-    甚至于说给文本加下划线这么简单的功能，为了能和lualatex兼容，都要先…再…，其积弊如此。
-
-    当然了！这个时候自然会天降神兵，说，“我来救你！”
-
-    这个救星就是Mircosoft\textsuperscript{\small\textregistered} Word！
-\end{remark}
+这样，\code{GO}给出的将是从\code{i}到\code{j}的最短路径的\emph{最后一跳}。
 
 \end{document}
