@@ -17,13 +17,13 @@
 % 计数一直到subsubsection
 \setcounter{secnumdepth}{3}
 \ctexset{
-    % 章节标题格式
-    % 统统左对齐
-    section/format = \Large\bfseries\sffamily\raggedright,
-    subsection/format = \large\bfseries\sffamily\raggedright,
-    subsubsection/format = \normalsize\bfseries\sffamily\raggedright,
-    paragraph/format = \normalsize\bfseries\sffamily\raggedright,
-    subparagraph/format = \normalsize\bfseries\sffamily\raggedright
+  % 章节标题格式
+  % 统统左对齐
+  section/format = \Large\bfseries\sffamily\raggedright,
+  subsection/format = \large\bfseries\sffamily\raggedright,
+  subsubsection/format = \normalsize\bfseries\sffamily\raggedright,
+  paragraph/format = \normalsize\bfseries\sffamily\raggedright,
+  subparagraph/format = \normalsize\bfseries\sffamily\raggedright
 }
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -32,35 +32,42 @@
 
 \RequirePackage[paper=a4paper]{geometry}
 \geometry{
-    % MS Word的默认页边距
-    top = 2.54cm,
-    bottom = 2.54cm,
-    left = 3.18cm,
-    right = 3.18cm
+  % MS Word的默认页边距
+  top = 2.54cm,
+  bottom = 2.54cm,
+  left = 3.18cm,
+  right = 3.18cm
 }
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 英文字体
 %%%%%%%%%%%%%%%%%%%%%%
 
-\setromanfont[Scale=1.04]{LibertinusSerif}[
-  UprightFont = *-Regular,
-  BoldFont = *-Bold,
-  ItalicFont = *-Italic,
-  BoldItalicFont = *-BoldItalic,
-  Extension = .otf
+\setmainfont{lmroman}[
+  Extension         = .otf,
+  UprightFont       = *10-regular,
+  ItalicFont        = *10-italic,
+  BoldFont          = *10-bold,
+  BoldItalicFont    = *10-bolditalic,
+  SmallCapsFont     = *caps10-regular,
+  SlantedFont       = *slant10-regular,
+  Scale             = 1.1
 ]
-\setsansfont{LibertinusSans}[
-  UprightFont = *-Regular,
-  BoldFont = *-Bold,
-  ItalicFont = *-Italic,
-  Extension = .otf
+
+\setsansfont{lmsans10}[
+  Extension         = .otf,
+  UprightFont       = *-regular,
+  ItalicFont        = *-oblique,
+  BoldFont          = *-bold,
+  BoldItalicFont    = *-boldoblique,
+  Scale             = 1.1
 ]
-\setmonofont[Scale=0.9]{sarasa-mono-slab-sc}[
-  UprightFont = *-light,
-  BoldFont = *-regular,
-  ItalicFont = *-lightitalic,
-  BoldItalicFont = *-italic,
+
+\setmonofont[Scale=0.93]{sarasa-mono-slab-sc}[
+  UprightFont = *-regular,
+  BoldFont = *-bold,
+  ItalicFont = *-italic,
+  BoldItalicFont = *-bolditalic,
   Extension = .ttf
 ]
 
@@ -73,50 +80,64 @@
   UprightFont = *-Regular.otf,
   BoldFont = *-Bold.otf,
   ItalicFont = FZXKTK.TTF,
-  BoldItalicFont = FZShengSKSJW_Cu.TTF
+  BoldItalicFont = FZCKJW.TTF,
+  Script            = CJK Ideographic,
+  Language          = Chinese Simplified
 ]
 \setCJKsansfont{SourceHanSansSC}
 [
   UprightFont = *-Normal.otf,
   BoldFont = *-Medium.otf,
   ItalicFont = FZXKTK.TTF,
-  BoldItalicFont = FZShengSKSJW_Cu.TTF
+  BoldItalicFont = FZCKJW.TTF,
+  Script            = CJK Ideographic,
+  Language          = Chinese Simplified
 ]
 \setCJKmonofont{sarasa-mono-slab-sc}[
-  Scale=0.9,
-  UprightFont = *-light,
-  BoldFont = *-regular,
-  ItalicFont = *-lightitalic,
-  BoldItalicFont = *-italic,
-  Extension = .ttf
+  Scale=0.93,
+  UprightFont = *-regular,
+  BoldFont = *-bold,
+  ItalicFont = *-italic,
+  BoldItalicFont = *-bolditalic,
+  Extension = .ttf,
+  Script            = CJK Ideographic,
+  Language          = Chinese Simplified
 ]
 
 \setCJKfamilyfont{zhsong}{SourceHanSerifSC}[
   UprightFont = *-Regular.otf,
   BoldFont = *-Bold.otf,
   ItalicFont = FZXKTK.TTF,
-  BoldItalicFont = FZShengSKSJW_Cu.TTF
+  BoldItalicFont = FZCKJW.TTF,
+  Script            = CJK Ideographic,
+  Language          = Chinese Simplified
 ]
 \setCJKfamilyfont{zhhei}{SourceHanSansSC}[
   UprightFont = *-Normal.otf,
   BoldFont = *-Medium.otf,
   ItalicFont = FZXKTK.TTF,
-  BoldItalicFont = FZShengSKSJW_Cu.TTF
+  BoldItalicFont = FZCKJW.TTF,
+  Script            = CJK Ideographic,
+  Language          = Chinese Simplified
 ]
 \setCJKfamilyfont{zhkai}
 [
   UprightFont = FZXKTK.TTF,
-  BoldFont = FZShengSKSJW_Cu.TTF,
+  BoldFont = FZCKJW.TTF,
   ItalicFont = SourceHanSerifSC-Regular.otf,
-  BoldItalicFont = SourceHanSerifSC-Bold.otf
+  BoldItalicFont = SourceHanSerifSC-Bold.otf,
+  Script            = CJK Ideographic,
+  Language          = Chinese Simplified
 ]{fz-kai}
 \setCJKfamilyfont{zhfs}{sarasa-mono-slab-sc}[
-  Scale=0.9,
-  UprightFont = *-light,
-  BoldFont = *-regular,
-  ItalicFont = *-lightitalic,
-  BoldItalicFont = *-italic,
-  Extension = .ttf
+  Scale=0.93,
+  UprightFont = *-regular,
+  BoldFont = *-bold,
+  ItalicFont = *-italic,
+  BoldItalicFont = *-bolditalic,
+  Extension = .ttf,
+  Script            = CJK Ideographic,
+  Language          = Chinese Simplified
 ]
 
 \NewDocumentCommand \songti     { } {\CJKfamily{zhsong}}
@@ -225,20 +246,20 @@
 \RequirePackage{hyperref}
 
 \hypersetup{
-    pdfencoding=unicode,
-    pageanchor=true,
-    CJKbookmarks=true,
-    bookmarksnumbered=true,
-    bookmarksopen=true,
-    bookmarksopenlevel=0,
-    breaklinks=true,
-    colorlinks=false,
-    plainpages=false,
-    pdfborder=0 0 0,
-    colorlinks=true,
-    linkcolor=red!50!black,
-    anchorcolor=blue!50!black,
-    citecolor=green!50!black
+  pdfencoding=unicode,
+  pageanchor=true,
+  CJKbookmarks=true,
+  bookmarksnumbered=true,
+  bookmarksopen=true,
+  bookmarksopenlevel=0,
+  breaklinks=true,
+  colorlinks=false,
+  plainpages=false,
+  pdfborder=0 0 0,
+  colorlinks=true,
+  linkcolor=red!50!black,
+  anchorcolor=blue!50!black,
+  citecolor=green!50!black
 }
 
 \setminted{autogobble, breaklines, breakanywhere, fontsize=\small, python3, tabsize=4, baselinestretch=1, mathescape, escapeinside=||}
@@ -247,7 +268,7 @@
 \makeatletter
 \AtBeginEnvironment{minted}{\dontdofcolorbox}
 \def\dontdofcolorbox{
-    \renewcommand\fcolorbox[4][]{##4}
+  \renewcommand\fcolorbox[4][]{##4}
 }
 \xpatchcmd{\inputminted}{\minted@fvset}{\minted@fvset\dontdofcolorbox}{}{}
 \xpatchcmd{\mintinline}{\minted@fvset}{\minted@fvset\dontdofcolorbox}{}{}

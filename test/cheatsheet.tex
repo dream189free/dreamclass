@@ -253,13 +253,17 @@ DDS—11A(T)型电导率仪（附DIS型铂黑电极）1台；计时器1只；恒
     \item 呜
 \end{enumerate}
 
-\text{\kaishu 正常 \textbf{粗体} \textit{斜体}。}
+\newcommand{\testtext}{Adobe InDesign、Microsoft Word 等对中文与西文（这里用「西文」来泛指用空格分词的外文）混合排版支持较好的软件，都默认增大汉字和西文的间距。InDesign 的默认设置是 1/4 的全角空格宽度（遵从 JIS），也就是约等于一个半角空格。}
 
-\text{\songti 正常 \textbf{粗体} \textit{斜体}。}
+\newpage
 
-\text{\heiti 正常 \textbf{粗体} \textit{斜体}。}
+{\rmfamily \testtext \\ \textbf{\testtext} \\ \textit{\testtext} \\}
 
-\text{\fangsong 正常 \textbf{粗体} \textit{斜体}。}
+{\sffamily \testtext \\ \textbf{\testtext} \\ \textit{\testtext} \\}
+
+{\ttfamily \testtext \\ \textbf{\testtext} \\ \textit{\testtext} \\}
+
+\newpage
 
 \begin{remark}
     不过绝大多数用\LaTeX{}进行学术论文写作的同学，在新建文件不久之后就会认识到一个关键的事实，有诗云：
