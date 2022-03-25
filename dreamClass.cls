@@ -2,8 +2,6 @@
 %% # Dream Class
 %% # Author: Tianyi Liu <tyi.liu@outlook.com>
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{dreamClass}
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -74,6 +72,7 @@
 %%%%%%%%%%%%%%%%%%%%%%
 % 中文字体
 %%%%%%%%%%%%%%%%%%%%%%
+\defaultCJKfontfeatures { JFM = { zh_CN/{quanjiao,fzpr} } }
 
 \setCJKmainfont{SourceHanSerifSC}
 [
