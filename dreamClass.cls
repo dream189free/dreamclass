@@ -72,7 +72,6 @@
 %%%%%%%%%%%%%%%%%%%%%%
 % 中文字体
 %%%%%%%%%%%%%%%%%%%%%%
-\defaultCJKfontfeatures { JFM = { zh_CN/{quanjiao,fzpr} } }
 
 \setCJKmainfont{SourceHanSerifSC}
 [
