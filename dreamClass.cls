@@ -38,117 +38,95 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%
-% 英文字体
+% 字体
 %%%%%%%%%%%%%%%%%%%%%%
 
+
 \setmainfont{lmroman}[
-  Extension         = .otf,
-  UprightFont       = *10-regular,
-  ItalicFont        = *10-italic,
-  BoldFont          = *10-bold,
-  BoldItalicFont    = *10-bolditalic,
-  SmallCapsFont     = *caps10-regular,
-  SlantedFont       = *slant10-regular,
-  Scale             = 1.1
+    Extension         = .otf,
+    UprightFont       = *10-regular,
+    ItalicFont        = *10-italic,
+    BoldFont          = *10-bold,
+    BoldItalicFont    = *10-bolditalic,
+    SmallCapsFont     = *caps10-regular,
+    SlantedFont       = *slant10-regular,
+    Scale             = 1.1
 ]
 
 \setsansfont{lmsans10}[
-  Extension         = .otf,
-  UprightFont       = *-regular,
-  ItalicFont        = *-oblique,
-  BoldFont          = *-bold,
-  BoldItalicFont    = *-boldoblique,
-  Scale             = 1.1
+    Extension         = .otf,
+    UprightFont       = *-regular,
+    ItalicFont        = *-oblique,
+    BoldFont          = *-bold,
+    BoldItalicFont    = *-boldoblique,
+    Scale             = 1.1
 ]
 
-\setmonofont[Scale=0.93]{sarasa-mono-slab-sc}[
-  UprightFont = *-regular,
-  BoldFont = *-bold,
-  ItalicFont = *-italic,
-  BoldItalicFont = *-bolditalic,
-  Extension = .ttf
+\setmonofont{Sarasa Mono Slab SC}[Scale=0.93]
+
+\setCJKmainfont{Source Han Serif SC}[
+    UprightFont    = *,
+    BoldFont       = * Bold,
+    ItalicFont     = FZNewKai-Z03,
+    BoldItalicFont = FZCuKaiS-R-GB,
+    Script            = CJK Ideographic,
+    Language          = Chinese Simplified
+]
+\setCJKsansfont{Source Han Sans SC}[
+    UprightFont = * Normal,
+    BoldFont = * Medium,
+    ItalicFont     = FZNewKai-Z03,
+    BoldItalicFont = FZCuKaiS-R-GB,
+    Script            = CJK Ideographic,
+    Language          = Chinese Simplified
+]
+\setCJKmonofont{Sarasa Mono Slab SC}[Scale=0.93]
+\setCJKfamilyfont{zhsong}{Source Han Serif SC}[
+    UprightFont    = *,
+    BoldFont       = * Bold,
+    ItalicFont     = FZNewKai-Z03,
+    BoldItalicFont = FZCuKaiS-R-GB,
+    Script            = CJK Ideographic,
+    Language          = Chinese Simplified
+]
+\setCJKfamilyfont{zhhei}{Source Han Sans SC}[
+    UprightFont = * Normal,
+    BoldFont = * Medium,
+    ItalicFont     = FZNewKai-Z03,
+    BoldItalicFont = FZCuKaiS-R-GB,
+    Script            = CJK Ideographic,
+    Language          = Chinese Simplified
+]
+\setCJKfamilyfont{zhfs}{Sarasa Mono Slab SC}[Scale=0.93]
+\setCJKfamilyfont{zhkai}{FZNewKai-Z03}[
+    BoldFont = FZCuKaiS-R-GB,
+    ItalicFont     = Source Han Serif SC,
+    BoldItalicFont = Source Han Serif SC Bold,
+    Script            = CJK Ideographic,
+    Language          = Chinese Simplified
 ]
 
-%%%%%%%%%%%%%%%%%%%%%%
-% 中文字体
-%%%%%%%%%%%%%%%%%%%%%%
+\providecommand\songti{\CJKfamily{zhsong}}
+\providecommand\heiti{\CJKfamily{zhhei}}
+\providecommand\fangsong{\CJKfamily{zhfs}}
+\providecommand\kaishu{\CJKfamily{zhkai}}
 
-\setCJKmainfont{SourceHanSerifSC}
-[
-  UprightFont = *-Regular.otf,
-  BoldFont = *-Bold.otf,
-  ItalicFont = FZXKTK.TTF,
-  BoldItalicFont = FZCKJW.TTF,
-  Script            = CJK Ideographic,
-  Language          = Chinese Simplified
-]
-\setCJKsansfont{SourceHanSansSC}
-[
-  UprightFont = *-Normal.otf,
-  BoldFont = *-Medium.otf,
-  ItalicFont = FZXKTK.TTF,
-  BoldItalicFont = FZCKJW.TTF,
-  Script            = CJK Ideographic,
-  Language          = Chinese Simplified
-]
-\setCJKmonofont{sarasa-mono-slab-sc}[
-  Scale=0.93,
-  UprightFont = *-regular,
-  BoldFont = *-bold,
-  ItalicFont = *-italic,
-  BoldItalicFont = *-bolditalic,
-  Extension = .ttf,
-  Script            = CJK Ideographic,
-  Language          = Chinese Simplified
-]
-
-\setCJKfamilyfont{zhsong}{SourceHanSerifSC}[
-  UprightFont = *-Regular.otf,
-  BoldFont = *-Bold.otf,
-  ItalicFont = FZXKTK.TTF,
-  BoldItalicFont = FZCKJW.TTF,
-  Script            = CJK Ideographic,
-  Language          = Chinese Simplified
-]
-\setCJKfamilyfont{zhhei}{SourceHanSansSC}[
-  UprightFont = *-Normal.otf,
-  BoldFont = *-Medium.otf,
-  ItalicFont = FZXKTK.TTF,
-  BoldItalicFont = FZCKJW.TTF,
-  Script            = CJK Ideographic,
-  Language          = Chinese Simplified
-]
-\setCJKfamilyfont{zhkai}
-[
-  UprightFont = FZXKTK.TTF,
-  BoldFont = FZCKJW.TTF,
-  ItalicFont = SourceHanSerifSC-Regular.otf,
-  BoldItalicFont = SourceHanSerifSC-Bold.otf,
-  Script            = CJK Ideographic,
-  Language          = Chinese Simplified
-]{fz-kai}
-\setCJKfamilyfont{zhfs}{sarasa-mono-slab-sc}[
-  Scale=0.93,
-  UprightFont = *-regular,
-  BoldFont = *-bold,
-  ItalicFont = *-italic,
-  BoldItalicFont = *-bolditalic,
-  Extension = .ttf,
-  Script            = CJK Ideographic,
-  Language          = Chinese Simplified
-]
-
-\NewDocumentCommand \songti     { } {\CJKfamily{zhsong}}
-\NewDocumentCommand \heiti      { } {\CJKfamily{zhhei}}
-\NewDocumentCommand \kaishu     { } {\CJKfamily{zhkai}}
-\NewDocumentCommand \fangsong   { } {\CJKfamily{zhfs}}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 公式和符号
 %%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{amsmath}
-\RequirePackage{bm}
+\RequirePackage{unicode-math}
+% 使用 \pkg{unicode-math} 配置数学字体。
+\unimathsetup{
+  math-style = ISO,
+  bold-style = ISO,
+  nabla      = upright,
+  partial    = upright,
+}
+
+\setmathfont{latinmodern-math.otf}
 \newcommand*{\dif}{\mathop{}\!\mathrm{d}}
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -174,7 +152,6 @@
 % 算法（algorithm2e）
 %%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage{amssymb}
 \RequirePackage[ruled, linesnumbered, noend, vlined]{algorithm2e}
 \SetAlgorithmName{算法}{algorithmautoref}{算法列表}
 \SetKwInput{KwData}{输入}
